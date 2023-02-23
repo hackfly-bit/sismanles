@@ -77,13 +77,13 @@ class KegiatanVisitController extends Controller
         $visit = new Kegiatan_visit;
         $visit->user_id = Auth::user()->id;
         $visit->customer_id = $request->customer;
-        $visit->jenis_kegiatan = $request->jenis_kegiatan;
-        $visit->tanggal_visit = $request->tanggal;
+        $visit->kegiatan = $request->jenis_kegiatan;
+        $visit->tanggal = $request->tanggal;
         $visit->produk = $request->produk;
-        $visit->principal = $request->principal;
-        $visit->pertemuan_ke = $request->pertemuan;
+        $visit->brand = $request->principal;
+        $visit->pertemuan = $request->pertemuan;
         $visit->status = $request->status;
-        $visit->deskripsi = $request->deskripsi;
+        $visit->note = $request->deskripsi;
 
         // Checking Duplicate Data 
 

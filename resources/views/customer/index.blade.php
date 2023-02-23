@@ -49,6 +49,7 @@
                                     <th>Jenis Perusahaan</th>
                                     <th>Segmentasi</th>
                                     <th>Alamat</th>
+                                    <th>Call</th>
                                     <th>Revision</th>
                                     <th>Action</th>
                                 </tr>
@@ -64,6 +65,10 @@
                                             <td>{{ $x->jenis_perusahaan }}</td>
                                             <td>{{ $x->segmentasi }}</td>
                                             <td>{{ $x->alamat }}</td>
+                                            <td><a href="{{ route('customer.call', $x->id) }}"
+                                                class="btn btn-primary btn-icon">
+                                                <i data-feather="check-square"></i>
+                                            </a></td>
                                             <td><a href="{{ route('customer.history', $x->id) }}"
                                                     class="btn btn-primary btn-icon">
                                                     <i data-feather="check-square"></i>
@@ -103,6 +108,7 @@
                                     <th>Jenis Perusahaan</th>
                                     <th>Segmentasi</th>
                                     <th>Alamat</th>
+                                    <th>Call</th>
                                     <th>Revision</th>
                                     <th>Action</th>
                                 </tr>
@@ -118,6 +124,10 @@
                                             <td>{{ $x->jenis_perusahaan }}</td>
                                             <td>{{ $x->segmentasi }}</td>
                                             <td>{{ $x->alamat }}</td>
+                                            <td><a href="{{ route('customer.call', $x->id) }}"
+                                                class="btn btn-primary btn-icon">
+                                                <i data-feather="check-square"></i>
+                                            </a></td>
                                             <td><a href="{{ route('customer.history', $x->id) }}"
                                                     class="btn btn-primary btn-icon">
                                                     <i data-feather="check-square"></i>

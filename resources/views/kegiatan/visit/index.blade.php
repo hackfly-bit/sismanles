@@ -60,13 +60,13 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $x->customer->nama_instansi }}</td>
                 <td>{{ $x->customer->nama_customer }}</td>
-                <td>{{ $x->jenis_kegiatan }}</td>
-                <td>{{ $x->tanggal_visit }}</td>
+                <td>{{ $x->kegiatan }}</td>
+                <td>{{ $x->tanggal }}</td>
                 <td>{{ $x->produk }}</td>
-                <td>{{ $x->principal }}</td>
-                <td>Ke-{{ $x->pertemuan_ke }}</td>
+                <td>{{ $x->brand }}</td>
+                <td>Ke-{{ $x->pertemuan }}</td>
                 <td>{{ $x->status }}</td>
-                <td>{{ $x->deskripsi }}</td>
+                <td>{{ $x->note }}</td>
                 <td><a href="{{ route('visit.history', $x->id) }}"
                   class="btn btn-primary btn-icon">
                   <i data-feather="check-square"></i>
@@ -119,13 +119,13 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $x->customer->nama_instansi }}</td>
                 <td>{{ $x->customer->nama_customer }}</td>
-                <td>{{ $x->jenis_kegiatan }}</td>
-                <td>{{ $x->tanggal_visit }}</td>
+                <td>{{ $x->kegiatan }}</td>
+                <td>{{ $x->tanggal }}</td>
                 <td>{{ $x->produk }}</td>
-                <td>{{ $x->principal }}</td>
-                <td>Ke-{{ $x->pertemuan_ke }}</td>
+                <td>{{ $x->brand }}</td>
+                <td>Ke-{{ $x->pertemuan }}</td>
                 <td>{{ $x->status }}</td>
-                <td>{{ $x->deskripsi }}</td>
+                <td>{{ $x->note }}</td>
                 <td><a href="{{ route('visit.history', $x->id) }}"
                   class="btn btn-primary btn-icon">
                   <i data-feather="check-square"></i>

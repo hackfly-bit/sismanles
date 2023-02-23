@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Call;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use App\Models\Category\Status;
+use App\Models\Category\Pertemuan;
 use App\Models\Category\Segmentasi;
-use App\Models\Category\Jenis_Perusahaan;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Category\Jenis_Perusahaan;
 
 class CustomerController extends Controller
 {
@@ -28,6 +31,18 @@ class CustomerController extends Controller
 
 
         return view('customer.index', compact('customer','customer_sales', 'jenis_perusahaan', 'segmentasi'));
+    }
+
+    public function call($id)
+    {
+        $title = "Daftar History Call";
+        $customer = Customer::find($id);
+        $call = Call::where('customer_id', $id)->get();
+        $call_by_sales = Customer::where('user_id', Auth::user()->id)->get();
+        $pertemuan = Pertemuan::all();
+        $status = Status::all();
+
+        return view('kegiatan.call.index', compact('title','call','call_by_sales','customer','pertemuan','status'));
     }
 
     public function history($id)

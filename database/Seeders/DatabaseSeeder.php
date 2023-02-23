@@ -152,26 +152,26 @@ class DatabaseSeeder extends Seeder
         // );
 
         $kegiatan_visit = array(
-            array("id" => "1", "user_id" => "1", "customer_id" => "1", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "3", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "2", "user_id" => "1", "customer_id" => "2", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "4", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "3", "user_id" => "1", "customer_id" => "3", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "5", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "4", "user_id" => "1", "customer_id" => "4", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "6", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "5", "user_id" => "1", "customer_id" => "5", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "7", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "6", "user_id" => "1", "customer_id" => "6", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "8", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "7", "user_id" => "1", "customer_id" => "7", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "9", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "8", "user_id" => "1", "customer_id" => "8", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "10", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "9", "user_id" => "1", "customer_id" => "9", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "11", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "10", "user_id" => "1", "customer_id" => "10", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "12", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "11", "user_id" => "1", "customer_id" => "11", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "13", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "12", "user_id" => "1", "customer_id" => "12", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "14", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "13", "user_id" => "1", "customer_id" => "13", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "15", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "14", "user_id" => "1", "customer_id" => "14", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "16", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "15", "user_id" => "1", "customer_id" => "15", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "17", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "16", "user_id" => "1", "customer_id" => "16", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "18", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "17", "user_id" => "1", "customer_id" => "17", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "19", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "18", "user_id" => "1", "customer_id" => "18", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "20", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "19", "user_id" => "1", "customer_id" => "19", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "21", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu "),
-            array("id" => "20", "user_id" => "1", "customer_id" => "20", "jenis_kegiatan" => "Visit", "tanggal_visit" => Carbon::now(), "produk" => "Apa Aja", "principal" => "Apa Aja", "pertemuan_ke" => "22", "status" => "Done", "deskripsi" => "Deskripsi Singakat Untuk Kamu ")
+            array("id" => "1", "user_id" => "1", "customer_id" => "1", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "3", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "2", "user_id" => "1", "customer_id" => "2", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "4", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "3", "user_id" => "1", "customer_id" => "3", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "5", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "4", "user_id" => "1", "customer_id" => "4", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "6", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "5", "user_id" => "1", "customer_id" => "5", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "7", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "6", "user_id" => "1", "customer_id" => "6", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "8", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "7", "user_id" => "1", "customer_id" => "7", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "9", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "8", "user_id" => "1", "customer_id" => "8", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "10", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "9", "user_id" => "1", "customer_id" => "9", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "11", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "10", "user_id" => "1", "customer_id" => "10", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "12", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "11", "user_id" => "1", "customer_id" => "11", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "13", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "12", "user_id" => "1", "customer_id" => "12", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "14", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "13", "user_id" => "1", "customer_id" => "13", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "15", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "14", "user_id" => "1", "customer_id" => "14", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "16", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "15", "user_id" => "1", "customer_id" => "15", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "17", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "16", "user_id" => "1", "customer_id" => "16", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "18", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "17", "user_id" => "1", "customer_id" => "17", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "19", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "18", "user_id" => "1", "customer_id" => "18", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "20", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "19", "user_id" => "1", "customer_id" => "19", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "21", "status" => "Done", "note" => "note Singakat Untuk Kamu "),
+            array("id" => "20", "user_id" => "1", "customer_id" => "20", "kegiatan" => "Visit", "tanggal" => Carbon::now(), "produk" => "Apa Aja", "brand" => "Apa Aja", "pertemuan" => "22", "status" => "Done", "note" => "note Singakat Untuk Kamu ")
         );
         // array(
         //     array('id' => '1', 'user_id' =>  '1', 'customer_id' => '1', 'jenis_kegiatan' => 'visit', 'tanggal_visit'  => Carbon::now(), 'produk' => 'Apa Aja',  'principal' => 'apa aja', 'pertemuan_ke' => '3', 'status' => 'done',  'deskripsi' => 'deskripsi singakat untuk kamu')
@@ -182,26 +182,121 @@ class DatabaseSeeder extends Seeder
         );
 
         $sph = array(
-            array("id" => "1", "user_id" => "1", "customer_id" => "1", "sumber_anggaran" => "APBN", "nilai_pagu" => "20000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q1", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "2", "user_id" => "1", "customer_id" => "2", "sumber_anggaran" => "APBD", "nilai_pagu" => "30000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q2", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "3", "user_id" => "1", "customer_id" => "3", "sumber_anggaran" => "APBN", "nilai_pagu" => "40000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q3", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "4", "user_id" => "1", "customer_id" => "4", "sumber_anggaran" => "APBD", "nilai_pagu" => "50000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q4", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "5", "user_id" => "1", "customer_id" => "5", "sumber_anggaran" => "APBN", "nilai_pagu" => "60000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q1", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "6", "user_id" => "1", "customer_id" => "6", "sumber_anggaran" => "APBD", "nilai_pagu" => "70000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q2", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "7", "user_id" => "1", "customer_id" => "7", "sumber_anggaran" => "APBN", "nilai_pagu" => "80000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q3", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "8", "user_id" => "1", "customer_id" => "8", "sumber_anggaran" => "APBD", "nilai_pagu" => "90000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q4", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "9", "user_id" => "1", "customer_id" => "9", "sumber_anggaran" => "APBN", "nilai_pagu" => "100000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q1", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "10", "user_id" => "1", "customer_id" => "10", "sumber_anggaran" => "APBD", "nilai_pagu" => "110000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q2", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "11", "user_id" => "1", "customer_id" => "11", "sumber_anggaran" => "APBN", "nilai_pagu" => "120000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q3", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "12", "user_id" => "1", "customer_id" => "12", "sumber_anggaran" => "APBD", "nilai_pagu" => "130000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q4", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "13", "user_id" => "1", "customer_id" => "13", "sumber_anggaran" => "APBN", "nilai_pagu" => "140000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q1", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "14", "user_id" => "1", "customer_id" => "14", "sumber_anggaran" => "APBD", "nilai_pagu" => "150000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q2", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "15", "user_id" => "1", "customer_id" => "15", "sumber_anggaran" => "APBN", "nilai_pagu" => "160000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q3", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "16", "user_id" => "1", "customer_id" => "16", "sumber_anggaran" => "APBD", "nilai_pagu" => "170000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q4", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "17", "user_id" => "1", "customer_id" => "17", "sumber_anggaran" => "APBN", "nilai_pagu" => "180000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q1", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "18", "user_id" => "1", "customer_id" => "18", "sumber_anggaran" => "APBD", "nilai_pagu" => "190000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q2", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "19", "user_id" => "1", "customer_id" => "19", "sumber_anggaran" => "APBN", "nilai_pagu" => "200000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q3", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now()),
-            array("id" => "20", "user_id" => "1", "customer_id" => "20", "sumber_anggaran" => "APBD", "nilai_pagu" => "210000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", "time_line" => "Q4", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now())
+            array("id" => "1", "user_id" => "1", "customer_id" => "1", "sumber_anggaran" => "APBN", "nilai_pagu" => "20000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "2", "user_id" => "1", "customer_id" => "2", "sumber_anggaran" => "APBD", "nilai_pagu" => "30000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "3", "user_id" => "1", "customer_id" => "3", "sumber_anggaran" => "APBN", "nilai_pagu" => "40000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "4", "user_id" => "1", "customer_id" => "4", "sumber_anggaran" => "APBD", "nilai_pagu" => "50000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "5", "user_id" => "1", "customer_id" => "5", "sumber_anggaran" => "APBN", "nilai_pagu" => "60000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "6", "user_id" => "1", "customer_id" => "6", "sumber_anggaran" => "APBD", "nilai_pagu" => "70000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "7", "user_id" => "1", "customer_id" => "7", "sumber_anggaran" => "APBN", "nilai_pagu" => "80000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "8", "user_id" => "1", "customer_id" => "8", "sumber_anggaran" => "APBD", "nilai_pagu" => "90000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "9", "user_id" => "1", "customer_id" => "9", "sumber_anggaran" => "APBN", "nilai_pagu" => "100000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "10", "user_id" => "1", "customer_id" => "10", "sumber_anggaran" => "APBD", "nilai_pagu" => "110000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "11", "user_id" => "1", "customer_id" => "11", "sumber_anggaran" => "APBN", "nilai_pagu" => "120000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "12", "user_id" => "1", "customer_id" => "12", "sumber_anggaran" => "APBD", "nilai_pagu" => "130000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "13", "user_id" => "1", "customer_id" => "13", "sumber_anggaran" => "APBN", "nilai_pagu" => "140000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "14", "user_id" => "1", "customer_id" => "14", "sumber_anggaran" => "APBD", "nilai_pagu" => "150000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "15", "user_id" => "1", "customer_id" => "15", "sumber_anggaran" => "APBN", "nilai_pagu" => "160000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "16", "user_id" => "1", "customer_id" => "16", "sumber_anggaran" => "APBD", "nilai_pagu" => "170000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "17", "user_id" => "1", "customer_id" => "17", "sumber_anggaran" => "APBN", "nilai_pagu" => "180000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "18", "user_id" => "1", "customer_id" => "18", "sumber_anggaran" => "APBD", "nilai_pagu" => "190000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "19", "user_id" => "1", "customer_id" => "19", "sumber_anggaran" => "APBN", "nilai_pagu" => "200000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", ),
+            array("id" => "20", "user_id" => "1", "customer_id" => "20", "sumber_anggaran" => "APBD", "nilai_pagu" => "210000000", "metode_pembelian" => "cash", "metode_pembayaran" => "cash", )
+        );
+
+        $po = array(
+            array("id" => "1", "user_id" => "1", "customer_id" => "1", "time_line" => "Q1", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "2", "user_id" => "1", "customer_id" => "2", "time_line" => "Q2", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "3", "user_id" => "1", "customer_id" => "3", "time_line" => "Q3", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "4", "user_id" => "1", "customer_id" => "4", "time_line" => "Q4", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "5", "user_id" => "1", "customer_id" => "5", "time_line" => "Q1", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "6", "user_id" => "1", "customer_id" => "6", "time_line" => "Q2", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "7", "user_id" => "1", "customer_id" => "7", "time_line" => "Q3", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "8", "user_id" => "1", "customer_id" => "8", "time_line" => "Q4", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "9", "user_id" => "1", "customer_id" => "9", "time_line" => "Q1", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "10", "user_id" => "1", "customer_id" => "10","time_line" => "Q2", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "11", "user_id" => "1", "customer_id" => "11","time_line" => "Q3", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "12", "user_id" => "1", "customer_id" => "12","time_line" => "Q4", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "13", "user_id" => "1", "customer_id" => "13","time_line" => "Q1", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "14", "user_id" => "1", "customer_id" => "14","time_line" => "Q2", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "15", "user_id" => "1", "customer_id" => "15","time_line" => "Q3", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "16", "user_id" => "1", "customer_id" => "16","time_line" => "Q4", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "17", "user_id" => "1", "customer_id" => "17","time_line" => "Q1", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "18", "user_id" => "1", "customer_id" => "18","time_line" => "Q2", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "19", "user_id" => "1", "customer_id" => "19","time_line" => "Q3", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done'),
+            array("id" => "20", "user_id" => "1", "customer_id" => "20","time_line" => "Q4", "tanggal_pengiriman" => Carbon::now(), "tanggal_instalasi" => Carbon::now(), "status" => 'done')
+
+        );
+
+        $call = array(
+            array("id" => "1", "user_id" => "1", "customer_id" => "1", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "2", "user_id" => "1", "customer_id" => "2", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "3", "user_id" => "1", "customer_id" => "3", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "4", "user_id" => "1", "customer_id" => "4", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "5", "user_id" => "1", "customer_id" => "5", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "6", "user_id" => "1", "customer_id" => "6", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "7", "user_id" => "1", "customer_id" => "7", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "8", "user_id" => "1", "customer_id" => "8", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "9", "user_id" => "1", "customer_id" => "9", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "10", "user_id" => "1", "customer_id" => "10", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "11", "user_id" => "1", "customer_id" => "11", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "12", "user_id" => "1", "customer_id" => "12", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "13", "user_id" => "1", "customer_id" => "13", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "14", "user_id" => "1", "customer_id" => "14", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "15", "user_id" => "1", "customer_id" => "15", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "16", "user_id" => "1", "customer_id" => "16", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "17", "user_id" => "1", "customer_id" => "17", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "18", "user_id" => "1", "customer_id" => "18", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "19", "user_id" => "1", "customer_id" => "19", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "20", "user_id" => "1", "customer_id" => "20", "tanggal" => Carbon::now(), "pertemuan" => "1", "status" => "Done", "note" => "Note Singkat")
+        );
+
+        $quotation = array(
+            array("id" => "1", "user_id" => "1", "customer_id" => "1", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "2", "user_id" => "1", "customer_id" => "2", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "3", "user_id" => "1", "customer_id" => "3", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "4", "user_id" => "1", "customer_id" => "4", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "5", "user_id" => "1", "customer_id" => "5", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "6", "user_id" => "1", "customer_id" => "6", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "7", "user_id" => "1", "customer_id" => "7", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "8", "user_id" => "1", "customer_id" => "8", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "9", "user_id" => "1", "customer_id" => "9", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "10", "user_id" => "1", "customer_id" => "10", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"), 
+            array("id" => "11", "user_id" => "1", "customer_id" => "11", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "12", "user_id" => "1", "customer_id" => "12", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "13", "user_id" => "1", "customer_id" => "13", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "14", "user_id" => "1", "customer_id" => "14", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "15", "user_id" => "1", "customer_id" => "15", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "16", "user_id" => "1", "customer_id" => "16", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "17", "user_id" => "1", "customer_id" => "17", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "18", "user_id" => "1", "customer_id" => "18", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "19", "user_id" => "1", "customer_id" => "19", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "20", "user_id" => "1", "customer_id" => "20", "kegiatan" => "Quotation", "tanggal" => Carbon::now(), "status" => "Done", "note" => "Note Singkat")
+
+        );
+
+        $presentasi = array(
+            array("id" => "1", "user_id" => "1", "customer_id" => "1",  "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "2", "user_id" => "1", "customer_id" => "2",  "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "3", "user_id" => "1", "customer_id" => "3",  "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "4", "user_id" => "1", "customer_id" => "4",  "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "5", "user_id" => "1", "customer_id" => "5",  "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "6", "user_id" => "1", "customer_id" => "6",  "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "7", "user_id" => "1", "customer_id" => "7",  "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "8", "user_id" => "1", "customer_id" => "8",  "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "9", "user_id" => "1", "customer_id" => "9",  "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "10", "user_id" => "1", "customer_id" => "10", "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "11", "user_id" => "1", "customer_id" => "11", "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "12", "user_id" => "1", "customer_id" => "12", "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "13", "user_id" => "1", "customer_id" => "13", "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "14", "user_id" => "1", "customer_id" => "14", "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "15", "user_id" => "1", "customer_id" => "15", "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "16", "user_id" => "1", "customer_id" => "16", "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "17", "user_id" => "1", "customer_id" => "17", "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "18", "user_id" => "1", "customer_id" => "18", "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "19", "user_id" => "1", "customer_id" => "19", "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+            array("id" => "20", "user_id" => "1", "customer_id" => "20", "kegiatan" => "presentasi", "tanggal" => Carbon::now(), "pertemuan" =>"1", "status" => "Done", "note" => "Note Singkat"),
+
         );
 
 
@@ -255,6 +350,7 @@ class DatabaseSeeder extends Seeder
                 'username' => 'admin',
                 'firstname' => 'Admin',
                 'lastname' => 'Admin',
+                'role' => 'admin',
                 'email' => 'admin@admin.com',
                 'password' => bcrypt('password')
             ]
@@ -265,6 +361,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'sales',
             'firstname' => 'sales',
             'lastname' => 'sales',
+            'role' => 'sales',
             'email' => 'sales@admin.com',
             'password' => bcrypt('password')
         ]);
@@ -274,6 +371,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'manager',
             'firstname' => 'manager',
             'lastname' => 'manager',
+            'role' => 'manager',
             'email' => 'manager@admin.com',
             'password' => bcrypt('password')
         ]);
@@ -301,5 +399,9 @@ class DatabaseSeeder extends Seeder
         DB::table('kegiatan_others')->insert($kegiatan_other);
         DB::table('sphs')->insert($sph);
         DB::table('products')->insert($product);
+        DB::table('calls')->insert($call);
+        DB::table('quotations')->insert($quotation);
+        DB::table('presentasis')->insert($presentasi);
+        DB::table('preorders')->insert($po);
     }
 }
