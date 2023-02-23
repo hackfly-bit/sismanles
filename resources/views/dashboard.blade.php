@@ -270,6 +270,750 @@
     </div> <!-- row -->
 
     <div class="row">
+        <div class="col-4 col-xl-4 grid-margin stretch-card">
+            <div class="card overflow-hidden">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
+                        <h6 class="card-title mb-0">Sales Name</h6>
+                    </div>
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">New  Customer</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">New Customer</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Promotion</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Promotion</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Visit</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Visit</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Quotation</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Quotation</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Presentasi</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Presentasi</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Pre Order</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Pre Order</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    
+                    
+
+                    {{-- edit Main Chart --}}
+                    <div id="count_by_sales"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-xl-4 grid-margin stretch-card">
+            <div class="card overflow-hidden">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
+                        <h6 class="card-title mb-0">Sales Name</h6>
+                    </div>
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">New  Customer</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">New Customer</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Promotion</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Promotion</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Visit</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Visit</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Quotation</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Quotation</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Presentasi</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Presentasi</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Pre Order</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Pre Order</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    
+                    
+
+                    {{-- edit Main Chart --}}
+                    <div id="count_by_sales"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-xl-4 grid-margin stretch-card">
+            <div class="card overflow-hidden">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
+                        <h6 class="card-title mb-0">Sales Name</h6>
+                    </div>
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">New  Customer</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">New Customer</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Promotion</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Promotion</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Visit</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Visit</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Quotation</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Quotation</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Presentasi</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Presentasi</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Pre Order</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Pre Order</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%;"
+                                            aria-valuenow="50%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            50%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    
+                    
+
+                    {{-- edit Main Chart --}}
+                    <div id="count_by_sales"></div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- row -->
+
+    <div class="row">
         <div class="col-lg-7 col-xl-8 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
