@@ -10,6 +10,9 @@ use App\Models\Category\Pertemuan;
 use App\Models\Category\Segmentasi;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category\Jenis_Perusahaan;
+use App\Models\Category\Principal;
+use App\Models\Kegiatan_visit;
+use App\Models\Quotation;
 
 class CustomerController extends Controller
 {
@@ -43,6 +46,34 @@ class CustomerController extends Controller
         $status = Status::all();
 
         return view('kegiatan.call.index', compact('title','call','call_by_sales','customer','pertemuan','status'));
+    }
+
+    public function visit($id)
+    {
+        $title = "Daftar History Visit";
+        $customer = Customer::find($id);
+        $visit = Kegiatan_visit::where('customer_id', $id)->get();
+        $visit_by_sales = Customer::where('user_id', Auth::user()->id)->get();
+        $brand = Principal::all();
+        $pertemuan = Pertemuan::all();
+        $status = Status::all();
+
+        return view('kegiatan.visit.index', compact('title','visit','visit_by_sales','customer','pertemuan','status','brand'));
+
+    }
+
+    public function quotation($id)
+    {
+        $title = "Daftar History Quotation";
+        $customer = Customer::find($id);
+        $quotation = Quotation::where('customer_id', $id)->get();
+        $quotation_by_sales = Customer::where('user_id', Auth::user()->id)->get();
+        $pertemuan = Pertemuan::all();
+        $status = Status::all();
+
+        return view('kegiatan.quotation.index', compact('title','quotation','quotation_by_sales','customer','pertemuan','status'));
+        
+
     }
 
     public function history($id)

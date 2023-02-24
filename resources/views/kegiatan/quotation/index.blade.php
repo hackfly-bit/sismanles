@@ -27,7 +27,7 @@
 
                     <h6 class="card-title">Tambah {{ $title }}</h6>
 
-                    <form class="forms-tambah" method="post" action="{{ route('visit.store') }}">
+                    <form class="forms-tambah" method="post" action="{{ route('quotation.store') }}">
                         @csrf
                         <div class="row mb-3">
                             <label for="customer" class="col-sm-3 col-form-label">Pilih Customer</label>
@@ -50,45 +50,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="row mb-3">
-                            <label for="brand" class="col-sm-3 col-form-label">Brand</label>
-                            <div class="col-sm-9">
-                                <select class="form-select" id="brand" name="brand">
-                                    <option value="">Pilih Brand</option>
-                                    @foreach ($brand as $x)
-                                        <option value="{{ $x->id }}">{{ $x->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="products" class="col-sm-3 col-form-label">Produk</label>
-                            <div class="col-sm-9">
-                                {{-- <div id="products"></div> --}}
-                                <select class="form-select" id="products" name="products">
-                                    <option value="">Pilih Produk</option>
-                                {{-- @foreach ($brand as $x)
-                                    <option value="{{ $x->id }}">{{ $x->name }}</option>
-                                @endforeach --}}
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="pertemuan" class="col-sm-3 col-form-label">Pertemuan</label>
-                            <div class="col-sm-9">
-                                <select class="form-select" id="pertemuan" name="pertemuan">
-                                    <option value="">Pilih Pertemuan</option>
-                                    @foreach ($pertemuan as $x)
-                                        <option value="{{ $x->id }}">Pertemuan ke-{{ $x->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
                         <div class="row mb-3">
                             <label for="status" class="col-sm-3 col-form-label">Status</label>
                             <div class="col-sm-9">
@@ -139,9 +100,6 @@
                                     <th>Nomer Hp</th>
                                     <th>Kegiatan</th>
                                     <th>Tanggal</th>
-                                    <th>Brand</th>
-                                    <th>Produk</th>
-                                    <th>Pertemuan</th>
                                     <th>Status</th>
                                     <th>Note</th>
                                     <th>Sales</th>
@@ -150,7 +108,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($visit as $x)
+                                @foreach ($quotation as $x)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $x->customer->nama_instansi }}</td>
@@ -158,10 +116,6 @@
                                         <td>{{ $x->customer->nomer_hp }}</td>
                                         <td>{{ $x->kegiatan }}</td>
                                         <td>{{ $x->tanggal }}</td>
-                                        <td>{{ $x->brand($x->brand) }}</td>
-                                        <td>{{ $x->produk }}</td>
-                                  
-                                        <td>Pertemuan Ke-{{ $x->pertemuan }}</td>
                                         @if ($x->status == 'Done')
                                             <td><span class="badge bg-success">{{ $x->status }}</span></td>
                                         @elseif ($x->status == 'Hold')
@@ -171,18 +125,18 @@
                                         @endif
                                         <td>{{ $x->note }}</td>
                                         <td>{{ $x->user->username }}</td>
-                                        <td><a href="{{ route('visit.history', $x->id) }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="check-square"></i>
                                             </a></td>
                                         <td>
-                                            <a href="{{ route('visit.destroy', ['customer_id' => $x->customer->id, 'id' => $x->id]) }}"
+                                            <a href="{{ route('quotation.destroy', ['customer_id' => $x->customer->id, 'id' => $x->id]) }}"
                                                 onclick="event.preventDefault(); document.getElementById('visit-delete-{{ $x->id }}').submit();"
                                                 class="btn btn-danger btn-icon">
                                                 <i data-feather="box"></i>
                                             </a>
                                             <form id="visit-delete-{{ $x->id }}"
-                                                action="{{ route('visit.destroy', ['customer_id' => $x->customer->id, 'id' => $x->id]) }}"
+                                                action="{{ route('call.destroy', ['customer_id' => $x->customer->id, 'id' => $x->id]) }}"
                                                 method="POST" class="d-none">
                                                 @method('delete')
                                                 @csrf
@@ -209,28 +163,4 @@
     <script src="{{ asset('assets/js/data-table.js') }}"></script>
     <script src="{{ asset('assets/plugins/flatpickr/flatpickr.min.js') }}"></script>
     <script src="{{ asset('assets/js/flatpickr.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $('#brand').change(function() {
-                var brandId = $(this).val();
-
-                if (brandId) {
-                    $.ajax({
-                        url: '/products/' + brandId,
-                        type: 'GET',
-                        dataType: 'json',
-                        success: function(data) {
-                            $('#products').empty();
-
-                            $.each(data, function(index, product) {
-                                $('#products').append('<option value="' + product.nama_produk +
-                                    '">' +  product.nama_produk + '</option>');
-
-                            });
-                        }
-                    });
-                }
-            });
-        });
-    </script>
 @endpush

@@ -14,7 +14,7 @@
             <div class="alert alert-success" role="alert">
                 {{ session()->get('success') }}
             </div>
-        @else
+        @elseif (session()->has('delete'))
             <div class="alert alert-danger" role="alert">
                 {{ session()->get('delete') }}
             </div>
@@ -138,7 +138,7 @@
                                         @endif
                                         <td>{{ $x->note }}</td>
                                         <td>{{ $x->user->username }}</td>
-                                        <td><a href="{{ route('visit.history', $x->id) }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="check-square"></i>
                                             </a></td>

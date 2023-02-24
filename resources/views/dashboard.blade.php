@@ -269,6 +269,8 @@
         </div>
     </div> <!-- row -->
 
+
+    {{--  Sales Index --}}
     <div class="row">
         <div class="col-4 col-xl-4 grid-margin stretch-card">
             <div class="card overflow-hidden">

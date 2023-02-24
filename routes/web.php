@@ -5,12 +5,14 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EventLogController;
 use App\Http\Controllers\KegiatanOtherController;
 use App\Http\Controllers\KegiatanVisitController;
+use App\Http\Controllers\QuotationController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SphController;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\UserController;
+use App\Models\Category\Principal;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,31 +34,45 @@ Route::post('password', [UserController::class, 'password_action'])->name('passw
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
 
-Route::group(['middleware' => ['auth']], function(){
-   Route::get('/', 'MainController@index')->name('dashboard');
-   Route::get('/setting-select', 'MainController@setting_select')->name('setting.select');
-   Route::get('/user','MainController@user')->name('setting.user');
-   Route::get('/user/edit/{id}', 'UserController@editUser')->name('setting.user.edit');
-   Route::put('/user/update/{id}','UserController@updateUser')->name('setting.user.update');
-   Route::delete('/user/delete/{id}','UserController@deleteUser')->name('setting.user.delete');
-   Route::get('/profile/{id}', 'UserController@profile')->name('user.profile');
+Route::group(['middleware' => ['auth']], function () {
+  Route::get('/', 'MainController@index')->name('dashboard');
+  Route::get('/setting-select', 'MainController@setting_select')->name('setting.select');
+  Route::get('/user', 'MainController@user')->name('setting.user');
+  Route::get('/user/edit/{id}', 'UserController@editUser')->name('setting.user.edit');
+  Route::put('/user/update/{id}', 'UserController@updateUser')->name('setting.user.update');
+  Route::delete('/user/delete/{id}', 'UserController@deleteUser')->name('setting.user.delete');
+  Route::get('/profile/{id}', 'UserController@profile')->name('user.profile');
+
+  Route::get('/products/{brand}', function (Principal $brand) {
+    $products = $brand->products;
+
+    return response()->json($products);
+  });
 
 
   //  Call Method
 
-   Route::controller(CallController::class)->name('call.')->prefix('call')->group(function(){
+  Route::controller(CallController::class)->name('call.')->prefix('call')->group(function () {
     Route::post('/store', 'store')->name('store');
     Route::put('/update/{id}', 'update')->name('update');
     Route::delete('/destroy/{customer_id}/{id}', 'destroy')->name('destroy');
   });
 
-  Route::controller(CustomerController::class)->name('customer.')->prefix('customer')->group(function(){
+  Route::controller(QuotationController::class)->name('quotation.')->prefix('quotation')->group(function () {
+    Route::post('/store', 'store')->name('store');
+    Route::put('/update/{id}', 'update')->name('update');
+    Route::delete('/destroy/{customer_id}/{id}', 'destroy')->name('destroy');
+  });
+
+  Route::controller(CustomerController::class)->name('customer.')->prefix('customer')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('create', 'create')->name('create');
     Route::get('show/{id}', 'show')->name('single');
     Route::get('edit/{id}', 'edit')->name('edit');
-    Route::get('call/{id}','call')->name('call');
-    Route::get('history/{id}','history')->name('history');
+    Route::get('call/{id}', 'call')->name('call');
+    Route::get('visit/{id}', 'visit')->name('visit');
+    Route::get('qutation/{id}','quotation')->name('quotation');
+    Route::get('history/{id}', 'history')->name('history');
 
     // Post Method
     Route::post('/store', 'store')->name('store');
@@ -64,12 +80,25 @@ Route::group(['middleware' => ['auth']], function(){
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
   });
 
-  Route::controller(KegiatanVisitController::class)->name('visit.')->prefix('visit')->group(function(){
+  Route::controller(KegiatanVisitController::class)->name('visit.')->prefix('visit')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('create', 'create')->name('create');
     Route::get('show/{id}', 'show')->name('single');
     Route::get('edit/{id}', 'edit')->name('edit');
-    Route::get('history/{id}','history')->name('history');
+    Route::get('history/{id}', 'history')->name('history');
+
+    // Post Method
+    Route::post('/store', 'store')->name('store');
+    Route::put('/update/{id}', 'update')->name('update');
+    Route::delete('/destroy/{customer_id}/{id}', 'destroy')->name('destroy');
+  });
+
+  Route::controller(KegiatanOtherController::class)->name('other.')->prefix('other')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('create', 'create')->name('create');
+    Route::get('show/{id}', 'show')->name('single');
+    Route::get('edit/{id}', 'edit')->name('edit');
+    Route::get('history/{id}', 'history')->name('history');
 
     // Post Method
     Route::post('/store', 'store')->name('store');
@@ -77,12 +106,12 @@ Route::group(['middleware' => ['auth']], function(){
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
   });
 
-  Route::controller(KegiatanOtherController::class)->name('other.')->prefix('other')->group(function(){
+  Route::controller(SphController::class)->name('sph.')->prefix('sph')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('create', 'create')->name('create');
     Route::get('show/{id}', 'show')->name('single');
     Route::get('edit/{id}', 'edit')->name('edit');
-    Route::get('history/{id}','history')->name('history');
+    Route::get('history/{id}', 'history')->name('history');
 
     // Post Method
     Route::post('/store', 'store')->name('store');
@@ -90,20 +119,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
   });
 
-  Route::controller(SphController::class)->name('sph.')->prefix('sph')->group(function(){
-    Route::get('/', 'index')->name('index');
-    Route::get('create', 'create')->name('create');
-    Route::get('show/{id}', 'show')->name('single');
-    Route::get('edit/{id}', 'edit')->name('edit');
-    Route::get('history/{id}','history')->name('history');
-
-    // Post Method
-    Route::post('/store', 'store')->name('store');
-    Route::put('/update/{id}', 'update')->name('update');
-    Route::delete('/destroy/{id}', 'destroy')->name('destroy');
-  });
-
-  Route::controller(EventLogController::class)->name('history.')->prefix('history')->group(function(){
+  Route::controller(EventLogController::class)->name('history.')->prefix('history')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('create', 'create')->name('create');
     Route::get('show/{id}', 'show')->name('single');
@@ -115,21 +131,20 @@ Route::group(['middleware' => ['auth']], function(){
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
   });
 
-  Route::controller(ReportController::class)->name('report.')->prefix('report')->group(function(){
+  Route::controller(ReportController::class)->name('report.')->prefix('report')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('create', 'create')->name('create');
     Route::get('show/{id}', 'show')->name('single');
     Route::get('edit/{id}', 'edit')->name('edit');
-    Route::get('/pdf','generatePDF')->name('generatePDF');
-    Route::get('/excel','generateExcel')->name('generateExcel');
-    
+    Route::get('/pdf', 'generatePDF')->name('generatePDF');
+    Route::get('/excel', 'generateExcel')->name('generateExcel');
+
 
     // Post Method
     Route::post('/store', 'store')->name('store');
     Route::put('/update/{id}', 'update')->name('update');
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
   });
-
 });
 
 //     Route::group(['prefix' => 'error'], function () {
