@@ -141,15 +141,15 @@
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="check-square"></i>
                                             </a></td>
-                                            <td><a href="{{ route('customer.call', $x->id) }}"
+                                            <td><a href="{{ route('customer.presentasi', $x->id) }}"
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="check-square"></i>
                                             </a></td>
-                                            <td><a href="{{ route('customer.call', $x->id) }}"
+                                            <td><a href="{{ route('customer.sph', $x->id) }}"
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="check-square"></i>
                                             </a></td>
-                                            <td><a href="{{ route('customer.call', $x->id) }}"
+                                            <td><a href="{{ route('customer.preorder', $x->id) }}"
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="check-square"></i>
                                             </a></td>

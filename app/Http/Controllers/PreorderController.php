@@ -22,16 +22,17 @@ class PreorderController extends Controller
 
         $preorder = new Preorder();
         $preorder->user_id = Auth::user()->id;
-        $preorder->customer_id = $request->customer_id;
+        $preorder->customer_id = $request->customer;
+        $preorder->kegiatan = "Preorder";
         $preorder->time_line = $request->time_line;
         $preorder->tanggal_pengiriman = $request->tanggal_pengiriman;
         $preorder->tanggal_instalasi = $request->tanggal_instalasi;
         $preorder->status = $request->status;
-        $preorder->kegiatan = "Preorder";
+        
 
         $preorder->save();
 
-        return redirect()->route('customer.preorder',$request->cutomer_id)->with('success', 'Data Preorder Berhasil Di Tambah');
+        return redirect()->route('customer.preorder',$request->customer)->with('success', 'Data Preorder Berhasil Di Tambah');
 
     }
 

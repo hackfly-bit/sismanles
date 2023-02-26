@@ -5,6 +5,8 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EventLogController;
 use App\Http\Controllers\KegiatanOtherController;
 use App\Http\Controllers\KegiatanVisitController;
+use App\Http\Controllers\PreorderController;
+use App\Http\Controllers\PresentasiController;
 use App\Http\Controllers\QuotationController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SphController;
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\UserController;
 use App\Models\Category\Principal;
+use FontLib\Table\Type\name;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +53,7 @@ Route::group(['middleware' => ['auth']], function () {
   });
 
 
-  //  Call Method
+  //  Call Route
 
   Route::controller(CallController::class)->name('call.')->prefix('call')->group(function () {
     Route::post('/store', 'store')->name('store');
@@ -58,7 +61,24 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/destroy/{customer_id}/{id}', 'destroy')->name('destroy');
   });
 
+  // Quotation 
+
   Route::controller(QuotationController::class)->name('quotation.')->prefix('quotation')->group(function () {
+    Route::post('/store', 'store')->name('store');
+    Route::put('/update/{id}', 'update')->name('update');
+    Route::delete('/destroy/{customer_id}/{id}', 'destroy')->name('destroy');
+  });
+
+  // Presentasi Route
+  Route::controller(PresentasiController::class)->name('presentasi.')->prefix('presentasi')->group(function(){
+    Route::post('/store', 'store')->name('store');
+    Route::put('/update/{id}', 'update')->name('update');
+    Route::delete('/destroy/{customer_id}/{id}', 'destroy')->name('destroy');
+  });
+
+  // Preorder Route
+
+  Route::controller(PreorderController::class)->name('preorder.')->prefix('preorder')->group(function(){
     Route::post('/store', 'store')->name('store');
     Route::put('/update/{id}', 'update')->name('update');
     Route::delete('/destroy/{customer_id}/{id}', 'destroy')->name('destroy');
@@ -73,6 +93,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('visit/{id}', 'visit')->name('visit');
     Route::get('qutation/{id}','quotation')->name('quotation');
     Route::get('history/{id}', 'history')->name('history');
+    Route::get('presentasi/{id}','presentasi')->name('presentasi');
+    Route::get('preorder/{id}','preorder')->name('preorder');
+    Route::get('sph/{id}', 'sph')->name('sph');
 
     // Post Method
     Route::post('/store', 'store')->name('store');
@@ -116,7 +139,7 @@ Route::group(['middleware' => ['auth']], function () {
     // Post Method
     Route::post('/store', 'store')->name('store');
     Route::put('/update/{id}', 'update')->name('update');
-    Route::delete('/destroy/{id}', 'destroy')->name('destroy');
+    Route::delete('/destroy/{customer_id}/{id}', 'destroy')->name('destroy');
   });
 
   Route::controller(EventLogController::class)->name('history.')->prefix('history')->group(function () {

@@ -59,42 +59,30 @@ class SphController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'customer' => 'required',
             'sumber_anggaran' => 'required',
             'nilai_pagu' => 'required',
             'metode_pembelian' => 'required',
             'metode_pembayaran' => 'required',
-            'time_line' => 'required',
-            'tanggal_pengiriman' => 'required',
-            'tanggal_instalasi' => 'required'
         ]);
 
         $sph = new Sph;
         $sph->user_id =  Auth::user()->id;
         $sph->customer_id = $request->customer;
+        $sph->kegiatan = "SPH";
         $sph->sumber_anggaran = $request->sumber_anggaran;
         $sph->nilai_pagu = $request->nilai_pagu;
         $sph->metode_pembelian = $request->metode_pembelian;
         $sph->metode_pembayaran = $request->metode_pembayaran;
-        $sph->time_line = $request->time_line;
-        $sph->tanggal_pengiriman = $request->tanggal_pengiriman;
-        $sph->tanggal_instalasi = $request->tanggal_instalasi;
 
-        $sph_cek = Sph::where('customer_id', $request->customer)->get()->count();
-
-        if($sph_cek > 0){
-            
-            return redirect()->route('sph.create')->with('success', 'Data Customer Sudah Ada');
-        }
 
         $sph->save();
 
-        return redirect()->route('sph.index')->with('success', 'Data SPH Berhasil Di Tambahkan !!');
+        return redirect()->route('customer.sph', $request->customer)->with('success', 'Data SPH Berhasil Di Tambahkan !!');
     }
 
     /**
      * Display the specified resource.
-     *
+     *\
      * @param  \App\Models\Sph  $sph
      * @return \Illuminate\Http\Response
      */
@@ -164,11 +152,11 @@ class SphController extends Controller
      * @param  \App\Models\Sph  $sph
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($customer_id, $id)
     {
         $sph = Sph::find($id);
         $sph->delete();
 
-        return redirect()->route('sph.index')->with('success', 'Data SPH Berhasi Di Hapus !!');
+        return redirect()->route('customer.sph',$customer_id)->with('delete', 'Data SPH Berhasi Di Hapus !!');
     }
 }

@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sph;
 use App\Models\Call;
 use App\Models\Customer;
+use App\Models\Preorder;
+use App\Models\Quotation;
+use App\Models\Presentasi;
 use Illuminate\Http\Request;
+use App\Models\Kegiatan_visit;
 use App\Models\Category\Status;
 use App\Models\Category\Pertemuan;
+use App\Models\Category\Principal;
+use App\Models\Category\Time_Line;
 use App\Models\Category\Segmentasi;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Category\Sumber_Anggaran;
 use App\Models\Category\Jenis_Perusahaan;
-use App\Models\Category\Principal;
-use App\Models\Kegiatan_visit;
-use App\Models\Quotation;
+use App\Models\Category\Metode_Pembelian;
+use App\Models\Category\Metode_Pembayaran;
 
 class CustomerController extends Controller
 {
@@ -74,6 +81,46 @@ class CustomerController extends Controller
         return view('kegiatan.quotation.index', compact('title','quotation','quotation_by_sales','customer','pertemuan','status'));
         
 
+    }
+
+    public function presentasi($id)
+    {
+        $title = "Daftar History Presentasi";
+        $customer = Customer::find($id);
+        $presentasi = Presentasi::where('customer_id', $id)->get();
+        $presentasi_by_sales = Customer::where('user_id', Auth::user()->id)->get();
+        $pertemuan = Pertemuan::all();
+        $status = Status::all();
+
+        return view('kegiatan.presentasi.index', compact('title','presentasi','presentasi_by_sales','customer','pertemuan','status'));
+       
+
+    }
+
+    public function preorder($id)           
+    {
+        $title = "Daftar History Preorder";
+        $customer = Customer::find($id);
+        $preorder = Preorder::where('customer_id', $id)->get();
+        $preorder_by_sales = Customer::where('user_id', Auth::user()->id)->get();
+        $pertemuan = Pertemuan::all();
+        $status = Status::all();
+        $time_line = Time_Line::all();
+
+        return view('kegiatan.preorder.index', compact('title','preorder','preorder_by_sales','customer','pertemuan','status','time_line'));
+    }
+
+    public function sph($id)        
+    {
+        $title = "Daftar History Sph";
+        $customer = Customer::find($id);
+        $sph = Sph::where('customer_id', $id)->get();
+        $sph_by_sales = Customer::where('user_id', Auth::user()->id)->get();
+        $sumber_anggaran = Sumber_Anggaran::all();
+        $metode_pembelian = Metode_Pembelian::all();
+        $metode_pembayaran = Metode_Pembayaran::all();
+
+        return view('kegiatan.sph.index', compact('title','sph','sph_by_sales','customer','sumber_anggaran', 'metode_pembelian','metode_pembayaran'));
     }
 
     public function history($id)
