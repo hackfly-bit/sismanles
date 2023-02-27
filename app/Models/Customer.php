@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Category\Principal;
 use Illuminate\Database\Eloquent\Model;
+use Venturecraft\Revisionable\Revisionable;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Venturecraft\Revisionable\Revisionable;
 
 class Customer extends Revisionable
 {
@@ -27,6 +28,25 @@ class Customer extends Revisionable
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function call()
+    {
+        return $this->hasMany(Call::class);
+    }
+    public function brand($id)
+    {
+        return Principal::where('id',$id)->get()->pluck('name')->first();
+    }
+
+    public function presentasi()
+    {
+       return $this->hasMany(Presentasi::class);
+    }
+    
+    public function preorder()
+    {
+        return $this->hasMany(Preorder::class);
     }
     
 }

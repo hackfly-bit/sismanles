@@ -157,7 +157,11 @@
                                                     class="btn btn-primary btn-icon">
                                                     <i data-feather="check-square"></i>
                                                 </a></td>
-                                            <td><a href="{{ route('customer.edit', $x->id) }}"
+                                            <td><a href="{{ route('report.reportCustomer', $x->id) }}"
+                                                class="btn btn-primary btn-icon">
+                                                <i data-feather="check-square"></i>
+                                            </a>
+                                                <a href="{{ route('customer.edit', $x->id) }}"
                                                     class="btn btn-primary btn-icon">
                                                     <i data-feather="check-square"></i>
                                                 </a>

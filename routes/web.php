@@ -161,6 +161,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('edit/{id}', 'edit')->name('edit');
     Route::get('/pdf', 'generatePDF')->name('generatePDF');
     Route::get('/excel', 'generateExcel')->name('generateExcel');
+    Route::get('/customer/{id}', 'show_report_by_customer')->name('reportCustomer');
 
 
     // Post Method

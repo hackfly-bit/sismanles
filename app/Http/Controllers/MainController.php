@@ -97,4 +97,9 @@ class MainController extends Controller
 
         return view('setting.setting-select.index', compact('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'));
     }
+    
+    // Function for display kpi from sales
+    
+
+
 }
