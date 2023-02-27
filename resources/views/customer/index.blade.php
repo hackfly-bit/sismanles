@@ -110,7 +110,7 @@
                                     <th>Alamat</th>
                                     <th>Call</th>
                                     <th>Visit</th>
-                                    <th>Quotation</th>
+                                    {{-- <th>Quotation</th> --}}
                                     <th>Presentasi</th>
                                     <th>SPH</th>
                                     <th>Preorder</th>
@@ -137,10 +137,10 @@
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="check-square"></i>
                                             </a></td>
-                                            <td><a href="{{ route('customer.quotation', $x->id) }}"
+                                            {{-- <td><a href="{{ route('customer.quotation', $x->id) }}"
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="check-square"></i>
-                                            </a></td>
+                                            </a></td> --}}
                                             <td><a href="{{ route('customer.presentasi', $x->id) }}"
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="check-square"></i>

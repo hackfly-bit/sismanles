@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category\Metode_Pembayaran;
-use App\Models\Category\Metode_Pembelian;
-use App\Models\Category\Sumber_Anggaran;
-use App\Models\Category\Time_Line;
-use App\Models\Customer;
 use App\Models\Sph;
+use App\Models\Customer;
 use Illuminate\Http\Request;
+use App\Models\Category\Time_Line;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use App\Models\Category\Sumber_Anggaran;
+use App\Models\Category\Metode_Pembelian;
+use App\Models\Category\Metode_Pembayaran;
 
 class SphController extends Controller
 {
@@ -60,19 +61,25 @@ class SphController extends Controller
     {
         $request->validate([
             'sumber_anggaran' => 'required',
-            'nilai_pagu' => 'required',
+            // 'nilai_pagu' => 'required',
             'metode_pembelian' => 'required',
             'metode_pembayaran' => 'required',
+            //'pdf_file' => 'required|mimes:pdf|max:10000'
         ]);
+        //upload pdf
+        $pdfName = time() . '.' . $request->pdf_file->extension();
+        $uploadedPdf = $request->pdf_file->move(public_path('assets/pdf'), $pdfName);
+        $pdfPath = $pdfName;
 
         $sph = new Sph;
         $sph->user_id =  Auth::user()->id;
         $sph->customer_id = $request->customer;
         $sph->kegiatan = "SPH";
         $sph->sumber_anggaran = $request->sumber_anggaran;
-        $sph->nilai_pagu = $request->nilai_pagu;
+        $sph->nilai_pagu = intval(str_replace(["Rp.", ".00", ","], "", $request->nilai_pagu));
         $sph->metode_pembelian = $request->metode_pembelian;
         $sph->metode_pembayaran = $request->metode_pembayaran;
+        $sph->pdf_file = $pdfPath;
 
 
         $sph->save();
@@ -155,6 +162,7 @@ class SphController extends Controller
     public function destroy($customer_id, $id)
     {
         $sph = Sph::find($id);
+        File::delete(public_path('assets/pdf/' . $sph->pdf_file));
         $sph->delete();
 
         return redirect()->route('customer.sph',$customer_id)->with('delete', 'Data SPH Berhasi Di Hapus !!');

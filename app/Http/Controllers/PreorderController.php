@@ -38,7 +38,7 @@ class PreorderController extends Controller
 
     public function destroy($customer_id,$id){
         $preorder = Preorder::find($id);
-        $preorder->destroy();
+        $preorder->delete();
         return redirect()->route('customer.preorder',$customer_id)->with('delete', 'Data Preorder Berhasil Di Hapus');
         }
 }

@@ -76,7 +76,8 @@
                   <i data-feather="check-square"></i>
               </a>
               <a href="{{ route('sph.destroy', $x->id) }}"
-                  onclick="event.preventDefault(); document.getElementById('sph-delete-{{ $x->id }}').submit();"
+                  
+                
                   class="btn btn-danger btn-icon">
                   <i data-feather="box"></i>
               </a>

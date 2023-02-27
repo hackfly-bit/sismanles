@@ -1,6 +1,7 @@
 @extends('layout.master')
 
 @push('plugin-styles')
+    <link href="{{ asset('assets/plugins/dropify/css/dropify.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/plugins/datatables-net-bs5/dataTables.bootstrap5.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/plugins/flatpickr/flatpickr.min.css') }}" rel="stylesheet" />
 @endpush
@@ -27,7 +28,7 @@
 
                     <h6 class="card-title">Tambah {{ $title }}</h6>
 
-                    <form class="forms-tambah" method="post" action="{{ route('sph.store') }}">
+                    <form class="forms-tambah" method="post" action="{{ route('sph.store') }}"  enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <label for="customer" class="col-sm-3 col-form-label">Pilih Customer</label>
@@ -54,8 +55,8 @@
                         <div class="row mb-3">
                             <label for="nilai_pagu" class="col-sm-3 col-form-label">Nilai Pagu</label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" id="nilai_pagu" placeholder="Nilai Pagu"
-                                    name="nilai_pagu" value="{{ old('nilai_pagu') }}">
+                                <input type="text" class="form-control" id="nilai_pagu" placeholder="Nilai Pagu"
+                                    name="nilai_pagu" value="{{ old('nilai_pagu') }}" data-inputmask="'alias': 'currency', 'prefix':'Rp.'" dir="rtl">
                             </div>
                         </div>
 
@@ -83,6 +84,16 @@
                                 </select>
                             </div>
                         </div>
+
+                        <div class="row mb-3">
+                            <label for="myDropify" class="col-sm-3 col-form-label">Upload Surat Penawaran Harga</label>
+                            <div class="col-sm-9">
+                                <input type="file" name="pdf_file" id="myDropify"   />
+                            </div>
+                        </div>
+
+                        
+
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
                         <a href="{{ route('customer.index') }}" class="btn btn-secondary">Cancel</a>
                     </form>
@@ -118,6 +129,7 @@
                                     <th>Nilai Pagu</th>
                                     <th>Metode Pembelian</th>
                                     <th>Metode Pembayaran</th>
+                                    <th>SPH File</th>
                                     <th>Sales</th>
                                     <th>Revision</th>
                                     <th>Action</th>
@@ -135,6 +147,7 @@
                                         <td>Rp. {{ number_format($x->nilai_pagu) }}</td>
                                         <td>{{ $x->metode_pembelian }}</td>
                                         <td>{{ $x->metode_pembayaran }}</td>
+                                        <td><a href="{{  asset('assets/pdf/'.$x->pdf_file)}}">File</a></td>
                                         <td>{{ $x->user->username }}</td>
                                         <td><a href="#" class="btn btn-primary btn-icon">
                                                 <i data-feather="check-square"></i>
@@ -166,11 +179,15 @@
 @endsection
 
 @push('plugin-scripts')
+    <script src="{{ asset('assets/js/dropify.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-net/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-net-bs5/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
 @endpush
 @push('custom-scripts')
+    <script src="{{ asset('assets/plugins/dropify/js/dropify.min.js') }}"></script>
     <script src="{{ asset('assets/js/data-table.js') }}"></script>
+    <script src="{{ asset('assets/js/inputmask.js') }}"></script>
     <script src="{{ asset('assets/plugins/flatpickr/flatpickr.min.js') }}"></script>
     <script src="{{ asset('assets/js/flatpickr.js') }}"></script>
 @endpush

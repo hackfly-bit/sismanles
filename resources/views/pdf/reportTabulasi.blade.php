@@ -149,7 +149,7 @@
                                                     <td>{{ $x->presentasi()->get()->pluck('note')->last() }}</td>
                                                     <td>SPH</td>
                                                     <td>{{ $x->sph()->get()->pluck('sumber_anggaran')->last() }}</td>
-                                                    <td>{{ $x->sph()->get()->pluck('nilai_pagu')->last() }}</td>
+                                                    <td>Rp. {{ number_format($x->sph()->get()->pluck('nilai_pagu')->last()) }}</td>
                                                     <td>{{ $x->sph()->get()->pluck('metode_pembelian')->last() }}</td>
                                                     <td>{{ $x->sph()->get()->pluck('metode_pembayaran')->last() }}</td>
                                                     <td>{{ $x->preorder()->get()->pluck('kegiatan')->last() }}</td>
