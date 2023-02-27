@@ -30,15 +30,15 @@
             <li class="nav-item">
               <a href="{{ route('customer.index') }}" class="nav-link {{ active_class(['sales/customer']) }}">Data Customer</a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a href="{{ route('visit.index') }}" class="nav-link {{ active_class(['sales/visit']) }}">Visit / Presentasi </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
               <a href="{{ route('other.index') }}" class="nav-link {{ active_class(['sales/other']) }}">Other</a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a href="{{ route('sph.index') }}" class="nav-link {{ active_class(['sph/other']) }}">SPH</a>
-            </li>
+            </li> --}}
           </ul>
         </div>
       </li>

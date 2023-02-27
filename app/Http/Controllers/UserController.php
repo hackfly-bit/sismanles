@@ -37,6 +37,7 @@ class UserController extends Controller
         $user->lastname = $request->lastname;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->role = "sales";
         $user->address = "Depok";
         $user->city = "Jakarta";
         $user->country  =  "indonesia";
@@ -82,6 +83,7 @@ class UserController extends Controller
         $user->address = $request->address;
         $user->city = $request->city;
         $user->country  = "Indonesia";
+        $user->role = "sales";
         $user->about = $request->about;
         $user->syncRoles($request->role);
     

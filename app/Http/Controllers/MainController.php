@@ -55,6 +55,7 @@ class MainController extends Controller
 
 
 
+
         $count_sales = Customer::where('user_id', 1)->get();
 
         return view('dashboard', compact('a', 'b', 'c', 'd', 'e', 'count_sales', 'customer', 'customer_chart', 'kegiatan_visit_chart', 'kegiatan_other_chart', 'sph_chart', 'chart_by_sales','count_customer_by_sales'));
