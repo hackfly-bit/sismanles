@@ -478,7 +478,7 @@
                             <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
                                 <div class="w-100">
                                     <div class="d-flex justify-content-between">
-                                        <h6 class="fw-normal text-body mb-1">Pre Order</h6>
+                                        <h6 class="fw-normal text-body mb-1">Purchase Order</h6>
                                         <p class="text-muted tx-12">
                                            Weekly</p>
                                     </div>
@@ -496,7 +496,7 @@
                             <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
                                 <div class="w-100">
                                     <div class="d-flex justify-content-between">
-                                        <h6 class="fw-normal text-body mb-1">Pre Order</h6>
+                                        <h6 class="fw-normal text-body mb-1">Purchase Order</h6>
                                         <p class="text-muted tx-12">
                                            Mothly</p>
                                     </div>
