@@ -1,8 +1,6 @@
 <nav class="sidebar">
   <div class="sidebar-header">
-    <a href="#" class="sidebar-brand">
-      Noble<span>UI</span>
-    </a>
+    <img src="{{ URL::asset('assets/images/dgs.png') }}" alt="dgs"  width="70"  >
     <div class="sidebar-toggler not-active">
       <span></span>
       <span></span>
@@ -30,9 +28,8 @@
             <li class="nav-item">
               <a href="{{ route('customer.index') }}" class="nav-link {{ active_class(['sales/customer']) }}">Data Customer</a>
             </li>
-            {{-- <li class="nav-item">
-              <a href="{{ route('visit.index') }}" class="nav-link {{ active_class(['sales/visit']) }}">Visit / Presentasi </a>
-            </li> --}}
+            {{-- 
+               --}}
             <li class="nav-item">
               <a href="{{ route('other.index') }}" class="nav-link {{ active_class(['sales/other']) }}">Other</a>
             </li>

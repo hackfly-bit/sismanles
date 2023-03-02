@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Sph;
+use App\Models\Call;
 use App\Models\User;
 use App\Models\Customer;
-use Illuminate\Http\Request;
+use App\Models\Preorder;
+use Carbon\CarbonPeriod;
+use App\Models\Presentasi;
 use App\Models\Kegiatan_other;
 use App\Models\Kegiatan_visit;
 use App\Models\Category\Status;
@@ -25,17 +29,20 @@ class MainController extends Controller
     public function index()
     {
 
-        $customer = Customer::paginate(5);
+        $customer = Customer::all()->take(5)->sortByDesc('id');
         $a = Customer::all()->count();
-        $b = Kegiatan_visit::all()->count();
+        $b = Kegiatan_visit::where('status', 'Done')->count();
         $c = Kegiatan_other::all()->count();
-        $d = Sph::all()->count();
+        $d = Sph::where('status', 'Done')->count();
         $e =  User::whereHas(
             'roles',
             function ($q) {
                 $q->where('name', 'sales');
             },
         )->get();
+        $f = Call::where('status', 'Done')->count();
+        $g = Preorder::where('status', 'Done')->count();
+        $h = Presentasi::where('status', 'Done')->count();
 
         $customer_chart = DB::table('customers')->select(DB::raw("count(id) as Total"), DB::raw("(DATE_FORMAT(created_at, '%m-%Y')) as month_year"))->orderBy('created_at')->groupBy(DB::raw("DATE_FORMAT(created_at, '%m-%Y')"))->pluck('Total', 'month_year');
         $kegiatan_visit_chart = DB::table('kegiatan_visits')->select(DB::raw("count(id) as Total"), DB::raw("(DATE_FORMAT(created_at, '%m-%Y')) as month_year"))->orderBy('created_at')->groupBy(DB::raw("DATE_FORMAT(created_at, '%m-%Y')"))->pluck('Total', 'month_year');
@@ -51,14 +58,26 @@ class MainController extends Controller
             ->groupBy("username")
             ->get();
 
+        // monthly date 
+
+        $start = Carbon::now()->startOfMonth();
+        $end = Carbon::now()->endOfMonth();
+
+        $date_label =[];
+        $period = CarbonPeriod::create($start, $end);
+        foreach ($period as $key => $value) {
+            $date_label[$key] = $value->format('d-m-Y');
+        }
 
 
+        // return $date_label;
 
-
+        
+        
 
         $count_sales = Customer::where('user_id', 1)->get();
 
-        return view('dashboard', compact('a', 'b', 'c', 'd', 'e', 'count_sales', 'customer', 'customer_chart', 'kegiatan_visit_chart', 'kegiatan_other_chart', 'sph_chart', 'chart_by_sales','count_customer_by_sales'));
+        return view('dashboard', compact('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'count_sales', 'customer', 'customer_chart', 'kegiatan_visit_chart', 'kegiatan_other_chart', 'sph_chart', 'chart_by_sales', 'count_customer_by_sales','date_label'));
     }
 
 
@@ -98,9 +117,24 @@ class MainController extends Controller
 
         return view('setting.setting-select.index', compact('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'));
     }
+
     
+
+    public function monthly_data($id)
+    {
+        $call = DB::table('calls')->where('user_id', $id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get()->count();
+        $visit = DB::table('kegiatan_visits')->where('user_id', $id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get()->count();
+        $sph = DB::table('sphs')->where('user_id', $id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get()->count();
+        $po = DB::table('preorders')->where('user_id', $id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get()->count();
+        $presentasi = DB::table('presentasis')->where('user_id', $id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get()->count();
+
+        // return all variable data
+
+        return [$call, $visit, $sph, $po, $presentasi];
+    }
+
     // Function for display kpi from sales
-    
+
 
 
 }

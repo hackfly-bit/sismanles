@@ -27,13 +27,7 @@ class ReportController extends Controller
                $this->check_null(Call::where('customer_id', $x->id)->get()->count()) + $this->check_null(Kegiatan_visit::where('customer_id', $x->id)->get()->count())+ $this->check_null(Sph::where('customer_id', $x->id)->get()->count())+ $this->check_null(Preorder::where('customer_id', $x->id)->get()->count())+$this->check_null(Presentasi::where('customer_id', $x->id)->get()->count());
             
         }
-
-
-
         
-
-        
-
         $customer_sales = Customer::where('user_id', Auth::user()->id)->get();
         return view('report.index', compact('customer', 'customer_sales','progress'));
     }

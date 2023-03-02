@@ -119,8 +119,8 @@ class CustomerController extends Controller
         $sumber_anggaran = Sumber_Anggaran::all();
         $metode_pembelian = Metode_Pembelian::all();
         $metode_pembayaran = Metode_Pembayaran::all();
-
-        return view('kegiatan.sph.index', compact('title','sph','sph_by_sales','customer','sumber_anggaran', 'metode_pembelian','metode_pembayaran'));
+        $status = Status::all();
+        return view('kegiatan.sph.index', compact('title','sph','sph_by_sales','customer','sumber_anggaran', 'metode_pembelian','metode_pembayaran','status'));
     }
 
     public function history($id)

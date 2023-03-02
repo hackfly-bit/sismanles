@@ -64,7 +64,8 @@ class SphController extends Controller
             // 'nilai_pagu' => 'required',
             'metode_pembelian' => 'required',
             'metode_pembayaran' => 'required',
-            //'pdf_file' => 'required|mimes:pdf|max:10000'
+            'status' =>  'required',
+            'pdf_file' => 'required|mimes:pdf|max:10000'
         ]);
         //upload pdf
         $pdfName = time() . '.' . $request->pdf_file->extension();
@@ -79,6 +80,7 @@ class SphController extends Controller
         $sph->nilai_pagu = intval(str_replace(["Rp.", ".00", ","], "", $request->nilai_pagu));
         $sph->metode_pembelian = $request->metode_pembelian;
         $sph->metode_pembayaran = $request->metode_pembayaran;
+        $sph->status = $request->status;
         $sph->pdf_file = $pdfPath;
 
 

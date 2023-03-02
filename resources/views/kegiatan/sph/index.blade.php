@@ -28,7 +28,8 @@
 
                     <h6 class="card-title">Tambah {{ $title }}</h6>
 
-                    <form class="forms-tambah" method="post" action="{{ route('sph.store') }}"  enctype="multipart/form-data">
+                    <form class="forms-tambah" method="post" action="{{ route('sph.store') }}"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <label for="customer" class="col-sm-3 col-form-label">Pilih Customer</label>
@@ -56,7 +57,8 @@
                             <label for="nilai_pagu" class="col-sm-3 col-form-label">Nilai Pagu</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="nilai_pagu" placeholder="Nilai Pagu"
-                                    name="nilai_pagu" value="{{ old('nilai_pagu') }}" data-inputmask="'alias': 'currency', 'prefix':'Rp.'" dir="rtl">
+                                    name="nilai_pagu" value="{{ old('nilai_pagu') }}"
+                                    data-inputmask="'alias': 'currency', 'prefix':'Rp.'" dir="rtl">
                             </div>
                         </div>
 
@@ -88,11 +90,23 @@
                         <div class="row mb-3">
                             <label for="myDropify" class="col-sm-3 col-form-label">Upload Surat Penawaran Harga</label>
                             <div class="col-sm-9">
-                                <input type="file" name="pdf_file" id="myDropify"   />
+                                <input type="file" name="pdf_file" id="myDropify" />
                             </div>
                         </div>
 
-                        
+                        <div class="row mb-3">
+                            <label for="status" class="col-sm-3 col-form-label">Status</label>
+                            <div class="col-sm-9">
+                                <select class="form-select" id="status" name="status">
+                                    <option selected disabled>Pilih Status</option>
+                                    @foreach ($status as $x)
+                                        <option value="{{ $x->name }}">{{ $x->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+
 
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
                         <a href="{{ route('customer.index') }}" class="btn btn-secondary">Cancel</a>
@@ -130,8 +144,8 @@
                                     <th>Metode Pembelian</th>
                                     <th>Metode Pembayaran</th>
                                     <th>SPH File</th>
+                                    <th>Status</th>
                                     <th>Sales</th>
-                                    <th>Revision</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -147,11 +161,16 @@
                                         <td>Rp. {{ number_format($x->nilai_pagu) }}</td>
                                         <td>{{ $x->metode_pembelian }}</td>
                                         <td>{{ $x->metode_pembayaran }}</td>
-                                        <td><a href="{{  asset('assets/pdf/'.$x->pdf_file)}}">File</a></td>
+                                        <td><a class="btn btn-warning btn-xs"
+                                                href="{{ asset('assets/pdf/' . $x->pdf_file) }}">File</a></td>
+                                        @if ($x->status == 'Done')
+                                            <td><span class="badge bg-success">{{ $x->status }}</span></td>
+                                        @elseif ($x->status == 'Hold')
+                                            <td><span class="badge bg-warning">{{ $x->status }}</span></td>
+                                        @else
+                                            <td><span class="badge bg-danger">{{ $x->status }}</span></td>
+                                        @endif
                                         <td>{{ $x->user->username }}</td>
-                                        <td><a href="#" class="btn btn-primary btn-icon">
-                                                <i data-feather="check-square"></i>
-                                            </a></td>
                                         <td>
                                             <a href="{{ route('sph.destroy', ['customer_id' => $x->customer->id, 'id' => $x->id]) }}"
                                                 onclick="event.preventDefault(); document.getElementById('visit-delete-{{ $x->id }}').submit();"

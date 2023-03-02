@@ -34,7 +34,7 @@
                     {{-- <p class="text-muted mb-3">Read the <a href="https://datatables.net/" target="_blank"> Official DataTables Documentation </a>for a full list of instructions and other options.</p> --}}
                     @role('sales')
                         <div class="table-responsive">
-                            <table id="dataTableExample" class="table nowrap ">
+                            <table id="report-tabulasi" class="table nowrap ">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -118,7 +118,7 @@
                         </div>
                     @else
                         <div class="table-responsive">
-                            <table id="dataTableExample" class="table nowrap ">
+                            <table id="report-tabulasi" class="table nowrap ">
                                 <thead>
                                     <tr>
                                         <th>No</th>
