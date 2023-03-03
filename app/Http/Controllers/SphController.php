@@ -62,6 +62,8 @@ class SphController extends Controller
         $request->validate([
             'sumber_anggaran' => 'required',
             // 'nilai_pagu' => 'required',
+            'brand' => 'required',
+            'products' => 'required',
             'metode_pembelian' => 'required',
             'metode_pembayaran' => 'required',
             'status' =>  'required',
@@ -76,6 +78,8 @@ class SphController extends Controller
         $sph->user_id =  Auth::user()->id;
         $sph->customer_id = $request->customer;
         $sph->kegiatan = "SPH";
+        $sph->brand = $request->brand;
+        $sph->produk = $request->products;
         $sph->sumber_anggaran = $request->sumber_anggaran;
         $sph->nilai_pagu = intval(str_replace(["Rp.", ".00", ","], "", $request->nilai_pagu));
         $sph->metode_pembelian = $request->metode_pembelian;

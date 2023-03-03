@@ -23,6 +23,7 @@ Yang harus di tambahkan ataupun di ubah :
     - Icon
 9. Restrict Menu Sales
 10. Main Chart 
+11. Export By Filter
 
 |   Senin   |   Selasa   |  Rabu     |  Kamis     |     Jumat   |
 | Progress  |   Progress |  Progress |  Finishing |     Ready   |

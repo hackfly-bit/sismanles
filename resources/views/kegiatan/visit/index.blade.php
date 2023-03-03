@@ -3,6 +3,7 @@
 @push('plugin-styles')
     <link href="{{ asset('assets/plugins/datatables-net-bs5/dataTables.bootstrap5.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/plugins/flatpickr/flatpickr.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/plugins/select2/select2.min.css') }}" rel="stylesheet" />
 @endpush
 @section('content')
     <nav class="page-breadcrumb">
@@ -68,7 +69,7 @@
                             <label for="products" class="col-sm-3 col-form-label">Produk</label>
                             <div class="col-sm-9">
                                 {{-- <div id="products"></div> --}}
-                                <select class="form-select" id="products" name="products">
+                                <select class="form-select js-example-basic-single" id="products" name="products">
                                     <option value="">Pilih Produk</option>
                                 {{-- @foreach ($brand as $x)
                                     <option value="{{ $x->id }}">{{ $x->name }}</option>
@@ -204,11 +205,13 @@
 @push('plugin-scripts')
     <script src="{{ asset('assets/plugins/datatables-net/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-net-bs5/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/plugins/select2/select2.min.js') }}"></script>
 @endpush
 @push('custom-scripts')
     <script src="{{ asset('assets/js/data-table.js') }}"></script>
     <script src="{{ asset('assets/plugins/flatpickr/flatpickr.min.js') }}"></script>
     <script src="{{ asset('assets/js/flatpickr.js') }}"></script>
+    <script src="{{ asset('assets/js/select2.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('#brand').change(function() {

@@ -1,4 +1,4 @@
-<table id="dataTableExample" class="table nowrap ">
+<table id="report-tabulasi" class="table nowrap ">
     <thead>
         <tr>
             <th>No</th>
@@ -35,6 +35,8 @@
             <th>Tanggal Pengiriman</th>
             <th>Tanggal Instalasi</th>
             <th>Status</th>
+            <th>Sales</th>
+            <th>Progress</th>
         </tr>
     </thead>
     <tbody>
@@ -68,7 +70,7 @@
                 <td>{{ $x->presentasi()->get()->pluck('note')->last() }}</td>
                 <td>SPH</td>
                 <td>{{ $x->sph()->get()->pluck('sumber_anggaran')->last() }}</td>
-                <td>{{ $x->sph()->get()->pluck('nilai_pagu')->last() }}</td>
+                <td>Rp.{{ number_format($x->sph()->get()->pluck('nilai_pagu')->last()) }}</td>
                 <td>{{ $x->sph()->get()->pluck('metode_pembelian')->last() }}</td>
                 <td>{{ $x->sph()->get()->pluck('metode_pembayaran')->last() }}</td>
                 <td>{{ $x->preorder()->get()->pluck('kegiatan')->last() }}</td>
@@ -76,11 +78,15 @@
                 <td>{{ $x->preorder()->get()->pluck('tanggal_pengiriman')->last() }}</td>
                 <td>{{ $x->preorder()->get()->pluck('tanggal_instalasi')->last() }}</td>
                 <td>{{ $x->preorder()->get()->pluck('status')->last() }}</td>
-
-                {{-- @endforeach --}}
-
-
+                <td>{{ $x->user->username}}</td>
+               
+                <td><div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: {{($progress[$x->id] / 5)*100}}%;" aria-valuenow="{{($progress[$x->id] / 5)*100}}" aria-valuemin="0" aria-valuemax="100">{{($progress[$x->id] / 5)*100}}%</div>
+                  </div></td>
+                
+               
+                
             </tr>
-        @endforeach
+            @endforeach
     </tbody>
 </table>

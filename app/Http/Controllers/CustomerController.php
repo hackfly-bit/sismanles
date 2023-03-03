@@ -116,11 +116,12 @@ class CustomerController extends Controller
         $customer = Customer::find($id);
         $sph = Sph::where('customer_id', $id)->get();
         $sph_by_sales = Customer::where('user_id', Auth::user()->id)->get();
+        $brand = Principal::all();
         $sumber_anggaran = Sumber_Anggaran::all();
         $metode_pembelian = Metode_Pembelian::all();
         $metode_pembayaran = Metode_Pembayaran::all();
         $status = Status::all();
-        return view('kegiatan.sph.index', compact('title','sph','sph_by_sales','customer','sumber_anggaran', 'metode_pembelian','metode_pembayaran','status'));
+        return view('kegiatan.sph.index', compact('brand','title','sph','sph_by_sales','customer','sumber_anggaran', 'metode_pembelian','metode_pembayaran','status'));
     }
 
     public function history($id)

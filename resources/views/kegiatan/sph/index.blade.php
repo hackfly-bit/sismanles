@@ -4,6 +4,7 @@
     <link href="{{ asset('assets/plugins/dropify/css/dropify.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/plugins/datatables-net-bs5/dataTables.bootstrap5.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/plugins/flatpickr/flatpickr.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/plugins/select2/select2.min.css') }}" rel="stylesheet" />
 @endpush
 @section('content')
     <nav class="page-breadcrumb">
@@ -36,6 +37,31 @@
                             <div class="col-sm-9">
                                 <select class="form-select" id="customer" name="customer">
                                     <option selected value="{{ $customer->id }}">{{ $customer->nama_customer }}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="brand" class="col-sm-3 col-form-label">Brand</label>
+                            <div class="col-sm-9">
+                                <select class="form-select" id="brand" name="brand">
+                                    <option value="">Pilih Brand</option>
+                                    @foreach ($brand as $x)
+                                        <option value="{{ $x->id }}">{{ $x->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="products" class="col-sm-3 col-form-label">Produk</label>
+                            <div class="col-sm-9">
+                                {{-- <div id="products"></div> --}}
+                                <select class="form-select js-example-basic-single" id="products" name="products">
+                                    <option value="">Pilih Produk</option>
+                                {{-- @foreach ($brand as $x)
+                                    <option value="{{ $x->id }}">{{ $x->name }}</option>
+                                @endforeach --}}
                                 </select>
                             </div>
                         </div>
@@ -202,6 +228,7 @@
     <script src="{{ asset('assets/plugins/datatables-net/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-net-bs5/dataTables.bootstrap5.js') }}"></script>
     <script src="{{ asset('assets/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/select2/select2.min.js') }}"></script>
 @endpush
 @push('custom-scripts')
     <script src="{{ asset('assets/plugins/dropify/js/dropify.min.js') }}"></script>
@@ -209,4 +236,29 @@
     <script src="{{ asset('assets/js/inputmask.js') }}"></script>
     <script src="{{ asset('assets/plugins/flatpickr/flatpickr.min.js') }}"></script>
     <script src="{{ asset('assets/js/flatpickr.js') }}"></script>
+    <script src="{{ asset('assets/js/select2.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#brand').change(function() {
+                var brandId = $(this).val();
+
+                if (brandId) {
+                    $.ajax({
+                        url: '/products/' + brandId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#products').empty();
+
+                            $.each(data, function(index, product) {
+                                $('#products').append('<option value="' + product.nama_produk +
+                                    '">' +  product.nama_produk + '</option>');
+
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 @endpush
