@@ -27,8 +27,7 @@
                   </div>
                   <div class="col-md-6">
                       <div class="d-flex justify-content-end">
-                          <a href="{{ route('sph.create') }}" class="btn btn-outline-primary">Tambah Data
-                              SPH</a>
+                          <a href="{{ route('sph.create') }}" class="btn btn-outline-primary">Tambah Data SPH</a>
                       </div>
                   </div>
               </div>
@@ -54,8 +53,6 @@
             </thead>
             <tbody>
               @foreach ($sph_sales as $x )
-                
-            
               <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $x->customer->nama_instansi }}</td>

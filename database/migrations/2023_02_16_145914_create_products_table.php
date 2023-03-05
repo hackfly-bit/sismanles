@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->foreignId('principal_id')->constrained('principal');
-            $table->string('nama_produk');
+            $table->text('nama_produk');
             $table->text('deskripsi')->nullable();
             $table->decimal('harga')->nullable();
             $table->timestamps();

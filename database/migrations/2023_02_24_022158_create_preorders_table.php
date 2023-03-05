@@ -18,10 +18,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
             $table->string('kegiatan')->nullable();
-            $table->string('time_line')->nullable();
-            $table->date('tanggal_pengiriman')->nullable();
-            $table->date('tanggal_instalasi')->nullable();
-            $table->string('status')->nullable();
+            $table->string('npwp')->nullable();
+            $table->date('due_date')->nullable();
+            $table->text('alamat')->nullable();
             $table->timestamps();
         });
     }

@@ -13,7 +13,6 @@ class CallController extends Controller
         $request->validate([
             'tanggal' => 'required',
             'pertemuan' => 'required',
-            'status' => 'required',
             'note' => 'required'
         ]);
 
@@ -23,7 +22,6 @@ class CallController extends Controller
         $call->kegiatan = "Call";
         $call->tanggal = $request->tanggal;
         $call->pertemuan = $request->pertemuan;
-        $call->status = $request->status;
         $call->note = $request->note;
 
         $call->save();

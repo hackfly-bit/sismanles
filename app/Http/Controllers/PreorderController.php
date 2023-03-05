@@ -12,10 +12,9 @@ class PreorderController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'time_line' => 'required',
-            'tanggal_pengiriman' => 'required',
-            'tanggal_instalasi' => 'required',
-            'status' => 'required',
+            'due_date' => 'required',
+            'npwp' => 'required',
+            'alamat_pengiriman' => 'required',
 
         ]);
 
@@ -24,10 +23,9 @@ class PreorderController extends Controller
         $preorder->user_id = Auth::user()->id;
         $preorder->customer_id = $request->customer;
         $preorder->kegiatan = "Purchase Order";
-        $preorder->time_line = $request->time_line;
-        $preorder->tanggal_pengiriman = $request->tanggal_pengiriman;
-        $preorder->tanggal_instalasi = $request->tanggal_instalasi;
-        $preorder->status = $request->status;
+        $preorder->npwp = $request->npwp;
+        $preorder->due_date = $request->due_date;
+        $preorder->alamat = $request->alamat_pengiriman;
         
 
         $preorder->save();

@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('brand')->nullable();
             $table->string('produk')->nullable();
             $table->string('pertemuan')->nullable();
-            $table->string('status')->nullable();
             $table->text('note')->nullable();
             $table->timestamps();
         });

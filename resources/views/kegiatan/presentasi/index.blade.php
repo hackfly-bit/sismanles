@@ -62,17 +62,6 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="status" class="col-sm-3 col-form-label">Status</label>
-                            <div class="col-sm-9">
-                                <select class="form-select" id="status" name="status">
-                                    <option selected disabled>Pilih Status</option>
-                                    @foreach ($status as $x)
-                                        <option value="{{ $x->name }}">{{ $x->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
                             <label for="note" class="col-sm-3 col-form-label">Note Kegiatan</label>
                             <div class="col-sm-9">
                                 <textarea class="form-control" id="note" autocomplete="off" placeholder="Note Kegiatan" rows="4"
@@ -112,10 +101,8 @@
                                     <th>Kegiatan</th>
                                     <th>Tanggal</th>
                                     <th>Pertemuan</th>
-                                    <th>Status</th>
                                     <th>Note</th>
                                     <th>Sales</th>
-                                    <th>Revision</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -129,19 +116,8 @@
                                         <td>{{ $x->kegiatan }}</td>
                                         <td>{{ $x->tanggal }}</td>
                                         <td>Pertemuan Ke-{{ $x->pertemuan }}</td>
-                                        @if ($x->status == 'Done')
-                                            <td><span class="badge bg-success">{{ $x->status }}</span></td>
-                                        @elseif ($x->status == 'Hold')
-                                            <td><span class="badge bg-warning">{{ $x->status }}</span></td>
-                                        @else
-                                            <td><span class="badge bg-danger">{{ $x->status }}</span></td>
-                                        @endif
                                         <td>{{ $x->note }}</td>
                                         <td>{{ $x->user->username }}</td>
-                                        <td><a href="#"
-                                                class="btn btn-primary btn-icon">
-                                                <i data-feather="check-square"></i>
-                                            </a></td>
                                         <td>
                                             <a href="{{ route('presentasi.destroy', ['customer_id' => $x->customer->id, 'id' => $x->id]) }}"
                                                 onclick="event.preventDefault(); document.getElementById('visit-delete-{{ $x->id }}').submit();"

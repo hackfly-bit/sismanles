@@ -67,7 +67,7 @@
           <div class="row mb-3">
             <label for="alamat" class="col-sm-3 col-form-label">Alamat</label>
             <div class="col-sm-9">
-              <textarea class="form-control" id="alamat" autocomplete="off" placeholder="Alamat Lengkap" rows="4" name="alamat" value="{{ old('alamat') }}"></textarea>
+              <textarea class="form-control" id="alamat" autocomplete="off" placeholder="Alamat Lengkap" rows="4" name="alamat" >{{ old('alamat') }}</textarea>
             </div>
           </div>
 

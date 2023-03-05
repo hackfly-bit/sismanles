@@ -65,8 +65,9 @@ class SphController extends Controller
             'brand' => 'required',
             'products' => 'required',
             'metode_pembelian' => 'required',
-            'metode_pembayaran' => 'required',
             'status' =>  'required',
+            'time_line' => 'required',
+            'winrate' => 'required',
             'pdf_file' => 'required|mimes:pdf|max:10000'
         ]);
         //upload pdf
@@ -79,14 +80,14 @@ class SphController extends Controller
         $sph->customer_id = $request->customer;
         $sph->kegiatan = "SPH";
         $sph->brand = $request->brand;
-        $sph->produk = $request->products;
+        $sph->produk = json_encode($request->products);
         $sph->sumber_anggaran = $request->sumber_anggaran;
         $sph->nilai_pagu = intval(str_replace(["Rp.", ".00", ","], "", $request->nilai_pagu));
         $sph->metode_pembelian = $request->metode_pembelian;
-        $sph->metode_pembayaran = $request->metode_pembayaran;
         $sph->status = $request->status;
+        $sph->time_line = $request->time_line;
+        $sph->winrate = $request->winrate;
         $sph->pdf_file = $pdfPath;
-
 
         $sph->save();
 

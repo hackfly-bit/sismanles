@@ -23,9 +23,10 @@ return new class extends Migration
             $table->string('sumber_anggaran')->nullable();
             $table->decimal('nilai_pagu',10,0)->nullable();
             $table->string('metode_pembelian')->nullable();
-            $table->string('metode_pembayaran')->nullable();
             $table->string('pdf_file')->nullable();
+            $table->string('time_line')->nullable();
             $table->string('status')->nullable();
+            $table->string('winrate')->nullable();
             $table->timestamps();
         });
     }

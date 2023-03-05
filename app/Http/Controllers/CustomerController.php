@@ -31,14 +31,10 @@ class CustomerController extends Controller
     
     public function index()
     {
-
         $customer_sales = Customer::where('user_id', Auth::user()->id)->get();
-
-       
         $customer = Customer::all();
         $jenis_perusahaan =  Jenis_Perusahaan::all();
         $segmentasi = Segmentasi::all();
-
 
         return view('customer.index', compact('customer','customer_sales', 'jenis_perusahaan', 'segmentasi'));
     }
@@ -50,9 +46,8 @@ class CustomerController extends Controller
         $call = Call::where('customer_id', $id)->get();
         $call_by_sales = Customer::where('user_id', Auth::user()->id)->get();
         $pertemuan = Pertemuan::all();
-        $status = Status::all();
 
-        return view('kegiatan.call.index', compact('title','call','call_by_sales','customer','pertemuan','status'));
+        return view('kegiatan.call.index', compact('title','call','call_by_sales','customer','pertemuan'));
     }
 
     public function visit($id)
@@ -63,23 +58,8 @@ class CustomerController extends Controller
         $visit_by_sales = Customer::where('user_id', Auth::user()->id)->get();
         $brand = Principal::all();
         $pertemuan = Pertemuan::all();
-        $status = Status::all();
 
-        return view('kegiatan.visit.index', compact('title','visit','visit_by_sales','customer','pertemuan','status','brand'));
-
-    }
-
-    public function quotation($id)
-    {
-        $title = "Daftar History Quotation";
-        $customer = Customer::find($id);
-        $quotation = Quotation::where('customer_id', $id)->get();
-        $quotation_by_sales = Customer::where('user_id', Auth::user()->id)->get();
-        $pertemuan = Pertemuan::all();
-        $status = Status::all();
-
-        return view('kegiatan.quotation.index', compact('title','quotation','quotation_by_sales','customer','pertemuan','status'));
-        
+        return view('kegiatan.visit.index', compact('title','visit','visit_by_sales','customer','pertemuan','brand'));
 
     }
 
@@ -93,8 +73,6 @@ class CustomerController extends Controller
         $status = Status::all();
 
         return view('kegiatan.presentasi.index', compact('title','presentasi','presentasi_by_sales','customer','pertemuan','status'));
-       
-
     }
 
     public function preorder($id)           
@@ -103,11 +81,8 @@ class CustomerController extends Controller
         $customer = Customer::find($id);
         $preorder = Preorder::where('customer_id', $id)->get();
         $preorder_by_sales = Customer::where('user_id', Auth::user()->id)->get();
-        $pertemuan = Pertemuan::all();
-        $status = Status::all();
-        $time_line = Time_Line::all();
 
-        return view('kegiatan.preorder.index', compact('title','preorder','preorder_by_sales','customer','pertemuan','status','time_line'));
+        return view('kegiatan.preorder.index', compact('title','preorder','preorder_by_sales','customer'));
     }
 
     public function sph($id)        
@@ -120,13 +95,13 @@ class CustomerController extends Controller
         $sumber_anggaran = Sumber_Anggaran::all();
         $metode_pembelian = Metode_Pembelian::all();
         $metode_pembayaran = Metode_Pembayaran::all();
+        $time_line = Time_Line::all();
         $status = Status::all();
-        return view('kegiatan.sph.index', compact('brand','title','sph','sph_by_sales','customer','sumber_anggaran', 'metode_pembelian','metode_pembayaran','status'));
+        return view('kegiatan.sph.index', compact('brand','title','sph','sph_by_sales','customer','sumber_anggaran', 'metode_pembelian','metode_pembayaran','status','time_line'));
     }
 
     public function history($id)
     {
-
         $customer = Customer::find($id);
         $history = $customer->revisionHistory;
 

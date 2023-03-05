@@ -69,7 +69,7 @@
                             <label for="products" class="col-sm-3 col-form-label">Produk</label>
                             <div class="col-sm-9">
                                 {{-- <div id="products"></div> --}}
-                                <select class="form-select js-example-basic-single" id="products" name="products">
+                                <select class="form-select js-example-basic-multiple" multiple="multiple" id="products" name="products">
                                     <option value="">Pilih Produk</option>
                                 {{-- @foreach ($brand as $x)
                                     <option value="{{ $x->id }}">{{ $x->name }}</option>
@@ -90,17 +90,6 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="status" class="col-sm-3 col-form-label">Status</label>
-                            <div class="col-sm-9">
-                                <select class="form-select" id="status" name="status">
-                                    <option selected disabled>Pilih Status</option>
-                                    @foreach ($status as $x)
-                                        <option value="{{ $x->name }}">{{ $x->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
                         <div class="row mb-3">
                             <label for="note" class="col-sm-3 col-form-label">Note Kegiatan</label>
                             <div class="col-sm-9">
@@ -143,10 +132,8 @@
                                     <th>Brand</th>
                                     <th>Produk</th>
                                     <th>Pertemuan</th>
-                                    <th>Status</th>
                                     <th>Note</th>
                                     <th>Sales</th>
-                                    <th>Revision</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -161,21 +148,9 @@
                                         <td>{{ $x->tanggal }}</td>
                                         <td>{{ $x->brand($x->brand) }}</td>
                                         <td>{{ $x->produk }}</td>
-                                  
                                         <td>Pertemuan Ke-{{ $x->pertemuan }}</td>
-                                        @if ($x->status == 'Done')
-                                            <td><span class="badge bg-success">{{ $x->status }}</span></td>
-                                        @elseif ($x->status == 'Hold')
-                                            <td><span class="badge bg-warning">{{ $x->status }}</span></td>
-                                        @else
-                                            <td><span class="badge bg-danger">{{ $x->status }}</span></td>
-                                        @endif
                                         <td>{{ $x->note }}</td>
                                         <td>{{ $x->user->username }}</td>
-                                        <td><a href="{{ route('visit.history', $x->id) }}"
-                                                class="btn btn-primary btn-icon">
-                                                <i data-feather="check-square"></i>
-                                            </a></td>
                                         <td>
                                             <a href="{{ route('visit.destroy', ['customer_id' => $x->customer->id, 'id' => $x->id]) }}"
                                                 onclick="event.preventDefault(); document.getElementById('visit-delete-{{ $x->id }}').submit();"

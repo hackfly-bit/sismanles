@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('kegiatan')->nullable();
             $table->date('tanggal')->nullable();
             $table->string('pertemuan')->nullable();
-            $table->string('status')->nullable();
             $table->string('note')->nullable();
             $table->timestamps();
         });

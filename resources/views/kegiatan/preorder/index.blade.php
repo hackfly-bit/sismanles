@@ -39,24 +39,19 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="time_line" class="col-sm-3 col-form-label">Status</label>
+                            <label for="npwp" class="col-sm-3 col-form-label">NPWP</label>
                             <div class="col-sm-9">
-                                <select class="form-select" id="time_line" name="time_line">
-                                    <option selected disabled>Pilih Time Line</option>
-                                    @foreach ($time_line as $x)
-                                        <option value="{{ $x->name }}">{{ $x->name }}</option>
-                                    @endforeach
-                                </select>
+                                <input type="text" class="form-control" id="npwp" placeholder="No NPWP"
+                                    name="npwp" value="{{ old('npwp') }}">
                             </div>
                         </div>
 
-
                         <div class="row mb-3">
-                            <label for="flatpickr-date" class="col-sm-3 col-form-label">Tanggal Pengiriman</label>
+                            <label for="flatpickr-date" class="col-sm-3 col-form-label">Due Date</label>
                             <div class="col-sm-9">
                                 <div class="input-group flatpickr" id="flatpickr-date">
                                     <input type="text" class="form-control" placeholder="Pilih Tanggal Kegiatan"
-                                        name="tanggal_pengiriman" data-input value="{{ old('tanggal_pengiriman') }}">
+                                        name="due_date" data-input value="{{ old('due_date') }}">
                                     <span class="input-group-text input-group-addon" data-toggle><i
                                             data-feather="calendar"></i></span>
                                 </div>
@@ -64,29 +59,11 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="flatpickr-date" class="col-sm-3 col-form-label">Tanggal Instalasi</label>
+                            <label for="alamat_pengiriman" class="col-sm-3 col-form-label">Alamat Pengiriman</label>
                             <div class="col-sm-9">
-                                <div class="input-group flatpickr" id="flatpickr-date">
-                                    <input type="text" class="form-control" placeholder="Pilih Tanggal Kegiatan"
-                                        name="tanggal_instalasi" data-input value="{{ old('tanggal_instalasi') }}">
-                                    <span class="input-group-text input-group-addon" data-toggle><i
-                                            data-feather="calendar"></i></span>
-                                </div>
+                              <textarea class="form-control" id="alamat_pengiriman" autocomplete="off" placeholder="Alamat Pengiriman" rows="4" name="alamat_pengiriman" >{{ old('alamat_pengiriman') }}</textarea>
                             </div>
-                        </div>
-                     
-                        <div class="row mb-3">
-                            <label for="status" class="col-sm-3 col-form-label">Status</label>
-                            <div class="col-sm-9">
-                                <select class="form-select" id="status" name="status">
-                                    <option selected disabled>Pilih Status</option>
-                                    @foreach ($status as $x)
-                                        <option value="{{ $x->name }}">{{ $x->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
+                          </div>
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
                         <a href="{{ route('customer.index') }}" class="btn btn-secondary">Cancel</a>
                     </form>
@@ -105,7 +82,6 @@
                         </div>
                         <div class="col-md-6">
                             <div class="d-flex justify-content-end">
-                                {{-- <a href="{{ route('visit.create') }}" class="btn btn-outline-primary">Tambah {{ $title }}</a> --}}
                             </div>
                         </div>
                     </div>
@@ -117,13 +93,11 @@
                                     <th>Nama Instansi</th>
                                     <th>Nama Customer</th>
                                     <th>Nomer Hp</th>
+                                    <th>NPWP</th>
                                     <th>Kegiatan</th>
-                                    <th>time Line</th>
-                                    <th>Tanggal Pengiriman</th>
-                                    <th>Tanggal Instalasi</th>
-                                    <th>Status</th>
+                                    <th>Due Date</th>
+                                    <th>Alamat</th>
                                     <th>Sales</th>
-                                    <th>Revision</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -134,22 +108,11 @@
                                         <td>{{ $x->customer->nama_instansi }}</td>
                                         <td>{{ $x->customer->nama_customer }}</td>
                                         <td>{{ $x->customer->nomer_hp }}</td>
+                                        <td>{{ $x->npwp }}</td>
                                         <td>{{ $x->kegiatan }}</td>
-                                        <td>{{ $x->time_line }}</td>
-                                        <td>{{ $x->tanggal_pengiriman }}</td>
-                                        <td>{{ $x->tanggal_instalasi }}</td>
-                                        @if ($x->status == 'Done')
-                                            <td><span class="badge bg-success">{{ $x->status }}</span></td>
-                                        @elseif ($x->status == 'Hold')
-                                            <td><span class="badge bg-warning">{{ $x->status }}</span></td>
-                                        @else
-                                            <td><span class="badge bg-danger">{{ $x->status }}</span></td>
-                                        @endif
+                                        <td>{{ $x->due_date }}</td>
+                                        <td>{{ $x->alamat }}</td>
                                         <td>{{ $x->user->username }}</td>
-                                        <td><a href="#"
-                                                class="btn btn-primary btn-icon">
-                                                <i data-feather="check-square"></i>
-                                            </a></td>
                                         <td>
                                             <a href="{{ route('preorder.destroy', ['customer_id' => $x->customer->id, 'id' => $x->id]) }}"
                                                 onclick="event.preventDefault(); document.getElementById('visit-delete-{{ $x->id }}').submit();"

@@ -31,18 +31,18 @@ class MainController extends Controller
 
         $customer = Customer::all()->take(5)->sortByDesc('id');
         $a = Customer::all()->count();
-        $b = Kegiatan_visit::where('status', 'Done')->count();
+        $b = Kegiatan_visit::all()->count();
         $c = Kegiatan_other::all()->count();
-        $d = Sph::where('status', 'Done')->count();
+        $d = Sph::all()->count();
         $e =  User::whereHas(
             'roles',
             function ($q) {
                 $q->where('name', 'sales');
             },
         )->get();
-        $f = Call::where('status', 'Done')->count();
-        $g = Preorder::where('status', 'Done')->count();
-        $h = Presentasi::where('status', 'Done')->count();
+        $f = Call::all()->count();
+        $g = Preorder::all()->count();
+        $h = Presentasi::all()->count();
 
         $customer_chart = DB::table('customers')->select(DB::raw("count(id) as Total"), DB::raw("(DATE_FORMAT(created_at, '%m-%Y')) as month_year"))->orderBy('created_at')->groupBy(DB::raw("DATE_FORMAT(created_at, '%m-%Y')"))->pluck('Total', 'month_year');
         $kegiatan_visit_chart = DB::table('kegiatan_visits')->select(DB::raw("count(id) as Total"), DB::raw("(DATE_FORMAT(created_at, '%m-%Y')) as month_year"))->orderBy('created_at')->groupBy(DB::raw("DATE_FORMAT(created_at, '%m-%Y')"))->pluck('Total', 'month_year');
@@ -55,6 +55,7 @@ class MainController extends Controller
         $chart_by_sales = DB::table("users")
             ->join("sphs", "users.id", "=", "sphs.user_id")
             ->selectRaw("username, sum(sphs.nilai_pagu) as total")
+            ->where('role','sales')
             ->groupBy("username")
             ->get();
 

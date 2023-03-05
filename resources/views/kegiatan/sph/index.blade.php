@@ -44,7 +44,7 @@
                         <div class="row mb-3">
                             <label for="brand" class="col-sm-3 col-form-label">Brand</label>
                             <div class="col-sm-9">
-                                <select class="form-select" id="brand" name="brand">
+                                <select class="form-select " id="brand" name="brand">
                                     <option value="">Pilih Brand</option>
                                     @foreach ($brand as $x)
                                         <option value="{{ $x->id }}">{{ $x->name }}</option>
@@ -57,7 +57,7 @@
                             <label for="products" class="col-sm-3 col-form-label">Produk</label>
                             <div class="col-sm-9">
                                 {{-- <div id="products"></div> --}}
-                                <select class="form-select js-example-basic-single" id="products" name="products">
+                                <select class="form-select js-example-basic-multiple" multiple="multiple" id="products" name="products[]">
                                     <option value="">Pilih Produk</option>
                                 {{-- @foreach ($brand as $x)
                                     <option value="{{ $x->id }}">{{ $x->name }}</option>
@@ -102,21 +102,14 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="metode_pembayaran" class="col-sm-3 col-form-label">Metode Pembayaran</label>
+                            <label for="time_line" class="col-sm-3 col-form-label">Time Line</label>
                             <div class="col-sm-9">
-                                <select class="form-select" id="metode_pembayaran" name="metode_pembayaran">
-                                    <option selected disabled>Pilih Metode Pembayaran</option>
-                                    @foreach ($metode_pembayaran as $x)
+                                <select class="form-select" id="time_line" name="time_line">
+                                    <option selected disabled>Pilih Time Line</option>
+                                    @foreach ($time_line as $x)
                                         <option value="{{ $x->name }}">{{ $x->name }}</option>
                                     @endforeach
                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="myDropify" class="col-sm-3 col-form-label">Upload Surat Penawaran Harga</label>
-                            <div class="col-sm-9">
-                                <input type="file" name="pdf_file" id="myDropify" />
                             </div>
                         </div>
 
@@ -132,7 +125,35 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="winrate" class="col-sm-3 col-form-label">Winrate</label>
+                            <div class="col-sm-9">
+                                <select class="form-select" id="winrate" name="winrate">
+                                    <option selected disabled>Pilih Winrate</option>
+                                        <option value="1%">1%</option>
+                                        <option value="5%">5%</option>
+                                        <option value="10%">10%</option>
+                                        <option value="20%">20%</option>
+                                        <option value="30%">30%</option>
+                                        <option value="40%">40%</option>
+                                        <option value="50%">50%</option>
+                                        <option value="60%">60%</option>
+                                        <option value="70%">70%</option>
+                                        <option value="80%">80%</option>
+                                        <option value="90%">90%</option>
+                                        <option value="100%">100%</option>
+                                </select>
+                            </div>
+                        </div>
 
+                        <div class="row mb-3">
+                            <label for="myDropify" class="col-sm-3 col-form-label">Upload Surat Penawaran Harga</label>
+                            <div class="col-sm-9">
+                                <input type="file" name="pdf_file" id="myDropify" />
+                            </div>
+                        </div>
+
+                        
 
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
                         <a href="{{ route('customer.index') }}" class="btn btn-secondary">Cancel</a>
@@ -165,12 +186,15 @@
                                     <th>Nama Customer</th>
                                     <th>Nomer Hp</th>
                                     <th>Kegiatan</th>
+                                    <th>Brand</th>
+                                    <th>Produk</th>
                                     <th>Sumber Anggaran</th>
                                     <th>Nilai Pagu</th>
                                     <th>Metode Pembelian</th>
-                                    <th>Metode Pembayaran</th>
                                     <th>SPH File</th>
+                                    <th>Time Line</th>
                                     <th>Status</th>
+                                    <th>Winrate</th>
                                     <th>Sales</th>
                                     <th>Action</th>
                                 </tr>
@@ -183,19 +207,21 @@
                                         <td>{{ $x->customer->nama_customer }}</td>
                                         <td>{{ $x->customer->nomer_hp }}</td>
                                         <td>{{ $x->kegiatan }}</td>
+                                        <td>{{ $x->brand($x->brand) }}</td>
+                                        <td>{{ implode(',',json_decode($x->produk)) }}</td>
                                         <td>{{ $x->sumber_anggaran }}</td>
                                         <td>Rp. {{ number_format($x->nilai_pagu) }}</td>
                                         <td>{{ $x->metode_pembelian }}</td>
-                                        <td>{{ $x->metode_pembayaran }}</td>
-                                        <td><a class="btn btn-warning btn-xs"
-                                                href="{{ asset('assets/pdf/' . $x->pdf_file) }}">File</a></td>
+                                        <td><a class="btn btn-warning btn-xs" href="{{ asset('assets/pdf/' . $x->pdf_file) }}" target="_blank">File</a></td>
+                                        <td>{{ $x->time_line }}</td>
                                         @if ($x->status == 'Done')
-                                            <td><span class="badge bg-success">{{ $x->status }}</span></td>
+                                        <td><span class="badge bg-success">{{ $x->status }}</span></td>
                                         @elseif ($x->status == 'Hold')
                                             <td><span class="badge bg-warning">{{ $x->status }}</span></td>
                                         @else
                                             <td><span class="badge bg-danger">{{ $x->status }}</span></td>
                                         @endif
+                                        <td>{{ $x->winrate }}</td>
                                         <td>{{ $x->user->username }}</td>
                                         <td>
                                             <a href="{{ route('sph.destroy', ['customer_id' => $x->customer->id, 'id' => $x->id]) }}"

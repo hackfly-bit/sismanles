@@ -28,6 +28,7 @@ class ReportController extends Controller
             
         }
         
+        // return $progress;
         $customer_sales = Customer::where('user_id', Auth::user()->id)->get();
         return view('report.index', compact('customer', 'customer_sales','progress'));
     }

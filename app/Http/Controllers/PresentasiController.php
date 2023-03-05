@@ -14,7 +14,6 @@ class PresentasiController extends Controller
         $request->validate([
             'tanggal' => 'required',
             'pertemuan' => 'required',
-            'status' =>  'required',
             'note' => 'required'
         ]);
 
@@ -24,7 +23,6 @@ class PresentasiController extends Controller
         $presentasi->kegiatan = "Presentasi";
         $presentasi->tanggal = $request->tanggal;
         $presentasi->pertemuan = $request->pertemuan;
-        $presentasi->status = $request->status;
         $presentasi->note = $request->note;
 
         $presentasi->save();

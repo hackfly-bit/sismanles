@@ -64,13 +64,9 @@ class KegiatanVisitController extends Controller
             'products' => 'required',
             'brand' => 'required',
             'pertemuan' => 'required',
-            'status' => 'required',
             'note' => 'required'
 
         ]);
-
-        
-
 
         $visit = new Kegiatan_visit;
         $visit->user_id = Auth::user()->id;
@@ -80,7 +76,6 @@ class KegiatanVisitController extends Controller
         $visit->produk = $request->products;
         $visit->brand = $request->brand;
         $visit->pertemuan = $request->pertemuan;
-        $visit->status = $request->status;
         $visit->note = $request->note;
 
         // Checking Duplicate Data 
