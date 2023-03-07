@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Category\Principal;
 use Illuminate\Database\Eloquent\Model;
 use Venturecraft\Revisionable\Revisionable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Sph extends Revisionable
 {
@@ -17,5 +18,15 @@ class Sph extends Revisionable
 
         return $this->belongsTo(Customer::class);
 
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function brand($id)
+    {
+        return Principal::where('id',$id)->get()->pluck('name')->first();
     }
 }

@@ -17,13 +17,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
-            $table->string('jenis_kegiatan');
-            $table->date('tanggal_visit');
-            $table->string('produk');
-            $table->string('principal');
-            $table->string('pertemuan_ke');
-            $table->string('status');
-            $table->text('deskripsi');
+            $table->string('kegiatan')->nullable();
+            $table->date('tanggal')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('produk')->nullable();
+            $table->string('pertemuan')->nullable();
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }

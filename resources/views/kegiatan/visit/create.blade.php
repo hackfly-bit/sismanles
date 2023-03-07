@@ -103,18 +103,6 @@
             </div>
           </div>
           <div class="row mb-3">
-            <label for="status" class="col-sm-3 col-form-label">Status</label>
-            <div class="col-sm-9">
-              <select class="form-select" id="status" name="status">
-                <option selected disabled >Pilih Status</option>
-                @foreach ($status as $x )
-                <option value="{{ $x->name }}">{{ $x->name }}</option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-           
-          <div class="row mb-3">
             <label for="deskripsi" class="col-sm-3 col-form-label">Deskripsi Kegiatan</label>
             <div class="col-sm-9">
               <textarea class="form-control" id="deskripsi" autocomplete="off" placeholder="Deskripsi Kegiatan" rows="4" name="deskripsi" >{{ old('deskripsi') }}</textarea>

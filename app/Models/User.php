@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Carbon\Carbon;
+use App\Models\Call;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -53,5 +55,72 @@ class User extends Authenticatable
     {
         return $this->hasMany(Customer::class);
     }
+
+    public function new_customer_weekly($id)
+    {
+        return Customer::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->subDays(7), Carbon::now()])->get()->count();
+    }
+
+    public function call_weekly($id)
+    {
+        return Call::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->subDays(7), Carbon::now()])->get()->count();
+    }
+
+    public function visit_weekly($id)
+    {
+        return Kegiatan_visit::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->subDays(7), Carbon::now()])->get()->count();
+    }
+
+    public function sph_weekly($id)
+    {
+        return Sph::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->subDays(7), Carbon::now()])->get()->count();
+    }
+
+    public function preorder_weekly($id)
+    {
+        return Preorder::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->subDays(7), Carbon::now()])->get()->count();
+    }
+
+    public function presentasi_weekly($id)
+    {
+        return Presentasi::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->subDays(7), Carbon::now()])->get()->count();
+    }
+
+    // Monthly KPI Setting
+
+    public function new_customer_monthly($id)
+    {
+        return Customer::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get()->count();
+    }
+
+    public function call_monthly($id)
+    {
+        return Call::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get()->count();
+    }
+
+    public function visit_monthly($id)
+    {
+        return Kegiatan_visit::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get()->count();
+    }
+
+    public function sph_monthly($id)
+    {
+        return Sph::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get()->count();
+    }
+
+    public function preorder_monthly($id)
+    {
+        return Preorder::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get()->count();
+    }
+
+    public function presentasi_monthly($id)
+    {
+        return Presentasi::where('user_id', $id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get()->count();
+    }
+
+    
+
+    
+
 }
 

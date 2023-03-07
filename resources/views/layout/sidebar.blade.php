@@ -1,8 +1,6 @@
 <nav class="sidebar">
   <div class="sidebar-header">
-    <a href="#" class="sidebar-brand">
-      Noble<span>UI</span>
-    </a>
+    <img src="{{ URL::asset('assets/images/dgs.png') }}" alt="dgs"  width="70"  >
     <div class="sidebar-toggler not-active">
       <span></span>
       <span></span>
@@ -30,15 +28,14 @@
             <li class="nav-item">
               <a href="{{ route('customer.index') }}" class="nav-link {{ active_class(['sales/customer']) }}">Data Customer</a>
             </li>
-            <li class="nav-item">
-              <a href="{{ route('visit.index') }}" class="nav-link {{ active_class(['sales/visit']) }}">Visit / Presentasi </a>
-            </li>
+            {{-- 
+               --}}
             <li class="nav-item">
               <a href="{{ route('other.index') }}" class="nav-link {{ active_class(['sales/other']) }}">Other</a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a href="{{ route('sph.index') }}" class="nav-link {{ active_class(['sph/other']) }}">SPH</a>
-            </li>
+            </li> --}}
           </ul>
         </div>
       </li>
@@ -94,16 +91,6 @@
           Dark
         </label>
       </div>
-    </div>
-    <div class="theme-wrapper">
-      <h6 class="text-muted mb-2">Light Version:</h6>
-      <a class="theme-item active" href="https://www.nobleui.com/laravel/template/demo1/">
-        <img src="{{ url('assets/images/screenshots/light.jpg') }}" alt="light version">
-      </a>
-      <h6 class="text-muted mb-2">Dark Version:</h6>
-      <a class="theme-item" href="https://www.nobleui.com/laravel/template/demo2/">
-        <img src="{{ url('assets/images/screenshots/dark.jpg') }}" alt="light version">
-      </a>
     </div>
   </div>
 </nav>

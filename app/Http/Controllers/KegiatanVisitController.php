@@ -60,44 +60,30 @@ class KegiatanVisitController extends Controller
     {
         $request->validate([
 
-            'customer' => 'required',
-            'jenis_kegiatan' => 'required',
             'tanggal' => 'required',
-            'produk' => 'required',
-            'principal' => 'required',
+            'products' => 'required',
+            'brand' => 'required',
             'pertemuan' => 'required',
-            'status' => 'required',
-            'deskripsi' => 'required'
+            'note' => 'required'
 
         ]);
-
-        
-
 
         $visit = new Kegiatan_visit;
         $visit->user_id = Auth::user()->id;
         $visit->customer_id = $request->customer;
-        $visit->jenis_kegiatan = $request->jenis_kegiatan;
-        $visit->tanggal_visit = $request->tanggal;
-        $visit->produk = $request->produk;
-        $visit->principal = $request->principal;
-        $visit->pertemuan_ke = $request->pertemuan;
-        $visit->status = $request->status;
-        $visit->deskripsi = $request->deskripsi;
+        $visit->kegiatan = "Visit";
+        $visit->tanggal = $request->tanggal;
+        $visit->produk = $request->products;
+        $visit->brand = $request->brand;
+        $visit->pertemuan = $request->pertemuan;
+        $visit->note = $request->note;
 
         // Checking Duplicate Data 
-
-        $kegiatan_visit = Kegiatan_visit::where('customer_id', $request->customer)->get()->count();
-
-        if($kegiatan_visit > 0){
-            
-            return redirect()->route('visit.create')->with('success', 'Data Customer Sudah Ada');
-        }
 
         $visit->save();
 
 
-        return redirect()->route('visit.index')->with('success', 'Data Visit Berhasil Di Tambah !!');
+        return redirect()->route('customer.visit', $request->customer)->with('success', 'Data Visit Berhasil Di Tambah !!');
     }
 
     /**
@@ -176,12 +162,12 @@ class KegiatanVisitController extends Controller
      * @param  \App\Models\Kegiatan_visit  $kegiatan_visit
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($customer_id, $id)
     {
         $visit = Kegiatan_visit::find($id);
         $visit->delete();
 
-        return redirect()->route('visit.index')->with('success', 'Data Visit Berhasil Di Hapus !!');
+        return redirect()->route('customer.visit', $customer_id)->with('delete', 'Data Visit Berhasil Di Hapus !!');
 
 
     }

@@ -9,54 +9,26 @@
         <div>
             <h4 class="mb-3 mb-md-0">Welcome to Dashboard</h4>
         </div>
-        <div class="d-flex align-items-center flex-wrap text-nowrap">
-            <div class="input-group flatpickr wd-200 me-2 mb-2 mb-md-0" id="dashboardDate">
-                <span class="input-group-text input-group-addon bg-transparent border-primary" data-toggle><i
-                        data-feather="calendar" class="text-primary"></i></span>
-                <input type="text" class="form-control bg-transparent border-primary" placeholder="Select date"
-                    data-input>
-            </div>
-            <button type="button" class="btn btn-outline-primary btn-icon-text me-2 mb-2 mb-md-0">
-                <i class="btn-icon-prepend" data-feather="printer"></i>
-                Print
-            </button>
-            <button type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0">
-                <i class="btn-icon-prepend" data-feather="download-cloud"></i>
-                Download Report
-            </button>
-        </div>
+        
     </div>
 
     <div class="row">
         <div class="col-12 col-xl-12 stretch-card">
             <div class="row flex-grow-1">
-                <div class="col-md-3 grid-margin stretch-card">
+
+                {{-- Customer Display --}}
+
+                <div class="col-md-4 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-baseline">
-                                <h6 class="card-title mb-0">Total Customer</h6>
+                                <h6 class="card-title mb-0">Customer</h6>
                                 <div class="dropdown mb-2">
                                     <button class="btn btn-link p-0" type="button" id="dropdownMenuButton"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="eye" class="icon-sm me-2"></i> <span
-                                                class="">View</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="edit-2" class="icon-sm me-2"></i> <span
-                                                class="">Edit</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="trash" class="icon-sm me-2"></i> <span
-                                                class="">Delete</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="printer" class="icon-sm me-2"></i> <span
-                                                class="">Print</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="download" class="icon-sm me-2"></i> <span
-                                                class="">Download</span></a>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="row">
@@ -76,38 +48,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 grid-margin stretch-card">
+
+                {{-- Total Call --}}
+
+                <div class="col-md-4 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-baseline">
-                                <h6 class="card-title mb-0">Total Visit</h6>
+                                <h6 class="card-title mb-0">Total Call</h6>
                                 <div class="dropdown mb-2">
                                     <button class="btn btn-link p-0" type="button" id="dropdownMenuButton1"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="eye" class="icon-sm me-2"></i> <span
-                                                class="">View</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="edit-2" class="icon-sm me-2"></i> <span
-                                                class="">Edit</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="trash" class="icon-sm me-2"></i> <span
-                                                class="">Delete</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="printer" class="icon-sm me-2"></i> <span
-                                                class="">Print</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="download" class="icon-sm me-2"></i> <span
-                                                class="">Download</span></a>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6 col-md-12 col-xl-5">
-                                    <h3 class="mb-2">{{ $b }}</h3>
+                                    <h3 class="mb-2">{{ $f }}</h3>
                                     <div class="d-flex align-items-baseline">
                                         <p class="text-success">
                                             <span>Orang</span>
@@ -122,38 +80,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 grid-margin stretch-card">
+
+                {{-- Total Visit --}}
+
+                <div class="col-md-4 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-baseline">
-                                <h6 class="card-title mb-0">Total Other</h6>
+                                <h6 class="card-title mb-0">Total Visit</h6>
                                 <div class="dropdown mb-2">
                                     <button class="btn btn-link p-0" type="button" id="dropdownMenuButton2"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="eye" class="icon-sm me-2"></i> <span
-                                                class="">View</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="edit-2" class="icon-sm me-2"></i> <span
-                                                class="">Edit</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="trash" class="icon-sm me-2"></i> <span
-                                                class="">Delete</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="printer" class="icon-sm me-2"></i> <span
-                                                class="">Print</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="download" class="icon-sm me-2"></i> <span
-                                                class="">Download</span></a>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6 col-md-12 col-xl-5">
-                                    <h3 class="mb-2">{{ $c }}</h3>
+                                    <h3 class="mb-2">{{ $b }}</h3>
                                     <div class="d-flex align-items-baseline">
                                         <p class="text-success">
                                             <span>Orang</span>
@@ -168,7 +112,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 grid-margin stretch-card">
+
+                {{-- Total SPH --}}
+
+                <div class="col-md-4 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-baseline">
@@ -178,23 +125,6 @@
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="eye" class="icon-sm me-2"></i> <span
-                                                class="">View</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="edit-2" class="icon-sm me-2"></i> <span
-                                                class="">Edit</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="trash" class="icon-sm me-2"></i> <span
-                                                class="">Delete</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="printer" class="icon-sm me-2"></i> <span
-                                                class="">Print</span></a>
-                                        <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                                data-feather="download" class="icon-sm me-2"></i> <span
-                                                class="">Download</span></a>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -214,59 +144,379 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- Total PO --}}
+                
+                <div class="col-md-4 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-baseline">
+                                <h6 class="card-title mb-0">Total Purchase Order</h6>
+                                <div class="dropdown mb-2">
+                                    <button class="btn btn-link p-0" type="button" id="dropdownMenuButton2"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-md-12 col-xl-5">
+                                    <h3 class="mb-2">{{ $g }}</h3>
+                                    <div class="d-flex align-items-baseline">
+                                        <p class="text-success">
+                                            <span>Orang</span>
+                                            <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-12 col-xl-7">
+                                    <div id="sph_chart" class="mt-md-3 mt-xl-0"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Total Other --}}
+
+                <div class="col-md-4 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-baseline">
+                                <h6 class="card-title mb-0">Total Other</h6>
+                                <div class="dropdown mb-2">
+                                    <button class="btn btn-link p-0" type="button" id="dropdownMenuButton2"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-md-12 col-xl-5">
+                                    <h3 class="mb-2">{{ $h }}</h3>
+                                    <div class="d-flex align-items-baseline">
+                                        <p class="text-success">
+                                            <span>Orang</span>
+                                            <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-12 col-xl-7">
+                                    <div id="sph_chart" class="mt-md-3 mt-xl-0"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div> <!-- row -->
 
     <div class="row">
-        <div class="col-12 col-xl-12 grid-margin stretch-card">
+        <div class="col-6 col-xl-6 grid-margin stretch-card">
             <div class="card overflow-hidden">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
-                        <h6 class="card-title mb-0">Revenue</h6>
+                        <h6 class="card-title mb-0">Total Penjualan Brand</h6>
                         <div class="dropdown">
                             <button class="btn btn-link p-0" type="button" id="dropdownMenuButton3"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="edit-2" class="icon-sm me-2"></i> <span
-                                        class="">Edit</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="trash" class="icon-sm me-2"></i> <span
-                                        class="">Delete</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="printer" class="icon-sm me-2"></i> <span
-                                        class="">Print</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="download" class="icon-sm me-2"></i> <span
-                                        class="">Download</span></a>
-                            </div>
+                           
                         </div>
                     </div>
                     <div class="row align-items-start mb-2">
                         <div class="col-md-7">
-                            <p class="text-muted tx-13 mb-3 mb-md-0">Revenue is the income that a business has from its
-                                normal business activities, usually from the sale of goods and services to customers.</p>
                         </div>
                         <div class="col-md-5 d-flex justify-content-md-end">
-                            <div class="btn-group mb-3 mb-md-0" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-outline-primary">Today</button>
-                                <button type="button" class="btn btn-outline-primary d-none d-md-block">Week</button>
-                                <button type="button" class="btn btn-primary">Month</button>
-                                <button type="button" class="btn btn-outline-primary">Year</button>
-                            </div>
                         </div>
                     </div>
 
                     {{-- edit Main Chart --}}
-                    <div id="count_by_sales"></div>
+                    <div id="chart_by_brand"></div>
                 </div>
             </div>
         </div>
+        <div class="col-6 col-xl-6 grid-margin stretch-card">
+            <div class="card overflow-hidden">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
+                        <h6 class="card-title mb-0">Total Penjualan Produk</h6>
+                        <div class="dropdown">
+                            <button class="btn btn-link p-0" type="button" id="dropdownMenuButton3"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+                            </button>
+                           
+                        </div>
+                    </div>
+                    <div class="row align-items-start mb-2">
+                        <div class="col-md-7">
+                        </div>
+                        <div class="col-md-5 d-flex justify-content-md-end">
+                        </div>
+                    </div>
+
+                    {{-- edit Main Chart --}}
+                    <div id="chart_by_brand"></div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- row -->
+
+
+    {{--  Sales Index --}}
+    <div class="row">
+        @foreach ($e as $x )
+        <div class="col-4 col-xl-4 grid-margin stretch-card">
+            <div class="card overflow-hidden">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
+                        <h6 class="card-title mb-0">{{ $x->username
+                         }}</h6>
+                    </div>
+
+                    
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">New  Customer</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->new_customer_weekly($x->id)/2)*100 }}%;"
+                                            aria-valuenow="{{ ($x->new_customer_weekly($x->id)/2)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->new_customer_weekly($x->id)/2)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">New Customer</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->new_customer_monthly($x->id)/8)*100 }}%;"
+                                            aria-valuenow="{{ ($x->new_customer_monthly($x->id)/8)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->new_customer_monthly($x->id)/8)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Promotion</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->call_weekly($x->id)/16)*100 }}%;"
+                                            aria-valuenow="{{ ($x->call_weekly($x->id)/16)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->call_weekly($x->id)/16)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Promotion</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->call_monthly($x->id)/60)*100 }}%;"
+                                            aria-valuenow="{{ ($x->call_monthly($x->id)/60)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->call_monthly($x->id)/60)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Visit</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->visit_weekly($x->id)/4)*100 }}%;"
+                                            aria-valuenow="{{ ($x->visit_weekly($x->id)/4)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->visit_weekly($x->id)/4)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Visit</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->visit_monthly($x->id)/16)*100 }}%;"
+                                            aria-valuenow="{{ ($x->visit_monthly($x->id)/16)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->visit_monthly($x->id)/16)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">SPH</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->sph_weekly($x->id)/2)*100 }}%;"
+                                            aria-valuenow="{{ ($x->sph_weekly($x->id)/2)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->sph_weekly($x->id)/2)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">SPH</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->sph_monthly($x->id)/8)*100 }}%;"
+                                            aria-valuenow="{{ ($x->sph_monthly($x->id)/8)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->sph_monthly($x->id)/8)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Purchase Order</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->preorder_weekly($x->id)/1)*100 }}%;"
+                                            aria-valuenow="{{ ($x->preorder_weekly($x->id)/1)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->preorder_weekly($x->id)/1)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Purchase Order</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->preorder_monthly($x->id)/1)*100 }}%;"
+                                            aria-valuenow="{{ ($x->preorder_monthly($x->id)/1)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->preorder_monthly($x->id)/1)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="row align-items-start mb-2">
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Presentasi</h6>
+                                        <p class="text-muted tx-12">
+                                           Weekly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->presentasi_weekly($x->id)/2)*100 }}%;"
+                                            aria-valuenow="{{ ($x->presentasi_weekly($x->id)/2)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->presentasi_weekly($x->id)/2)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="fw-normal text-body mb-1">Presentasi</h6>
+                                        <p class="text-muted tx-12">
+                                           Mothly</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ ($x->presentasi_monthly($x->id)/2)*100 }}%;"
+                                            aria-valuenow="{{ ($x->presentasi_monthly($x->id)/2)*100 }}%"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            {{ ($x->presentasi_monthly($x->id)/2)*100 }}%</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
+        
     </div> <!-- row -->
 
     <div class="row">
@@ -274,32 +524,14 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline mb-2">
-                        <h6 class="card-title mb-0">Monthly sales</h6>
+                        <h6 class="card-title mb-0">Target Sales Tahunan</h6>
                         <div class="dropdown mb-2">
                             <button class="btn btn-link p-0" type="button" id="dropdownMenuButton4"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="edit-2" class="icon-sm me-2"></i> <span
-                                        class="">Edit</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="trash" class="icon-sm me-2"></i> <span
-                                        class="">Delete</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="printer" class="icon-sm me-2"></i> <span
-                                        class="">Print</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="download" class="icon-sm me-2"></i> <span
-                                        class="">Download</span></a>
-                            </div>
                         </div>
                     </div>
-                    <p class="text-muted">Sales are activities related to selling or the number of goods or services sold
-                        in a given time period.</p>
                     <div id="chart_by_sales"></div>
                 </div>
             </div>
@@ -314,22 +546,6 @@
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="edit-2" class="icon-sm me-2"></i> <span
-                                        class="">Edit</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="trash" class="icon-sm me-2"></i> <span
-                                        class="">Delete</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="printer" class="icon-sm me-2"></i> <span
-                                        class="">Print</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="download" class="icon-sm me-2"></i> <span
-                                        class="">Download</span></a>
-                            </div>
                         </div>
                     </div>
                     <div id="storageChart"></div>
@@ -402,10 +618,10 @@
                                     </div>
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar"
-                                            style="width: {{ ($f->sph->sum('nilai_pagu') / 2000000000) * 100 }}%;"
-                                            aria-valuenow="{{ ($f->sph->sum('nilai_pagu') / 2000000000) * 100 }}"
+                                            style="width: {{ ($f->sph->sum('nilai_pagu') / 5000000000) * 100 }}%;"
+                                            aria-valuenow="{{ ($f->sph->sum('nilai_pagu') / 5000000000) * 100 }}"
                                             aria-valuemin="0" aria-valuemax="100">
-                                            {{ ($f->sph->sum('nilai_pagu') / 2000000000) * 100 }}%</div>
+                                            {{ ($f->sph->sum('nilai_pagu') / 5000000000) * 100 }}%</div>
                                     </div>
                                 </div>
                             </a>
@@ -693,8 +909,8 @@
                             x: '{{ $x->username }}',
                             y: {{ $x->total }},
                             goals: [{
-                                name: 'Expected',
-                                value: 2000000000,
+                                name: 'Expected ',
+                                value: 5000000000,
                                 strokeHeight: 5,
                                 strokeColor: '#775DD0'
                             }]
@@ -727,13 +943,14 @@
         };
 
         var count_by_sales = {
-            series: [{
-                name: 'series1',
-                data: [31, 40, 28, 51, 42, 109, 100]
-            }, {
-                name: 'series2',
-                data: [11, 32, 45, 34, 52, 41]
-            }],
+            series: [
+              @foreach ($e as $x )
+            {
+                name: '{{ $x->username }}',
+                data: [31, 40, 28, 51, 42, 109, 100,31, 40, 28, 51, 42, 109, 100,31, 40, 28, 51, 42, 109, 100,31, 40, 28, 51, 42, 109, 100]
+            }, 
+            @endforeach 
+        ],
             chart: {
                 height: 350,
                 type: 'area'
@@ -745,15 +962,12 @@
                 curve: 'smooth'
             },
             xaxis: {
-                type: 'datetime',
-                categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z",
-                    "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z",
-                    "2018-09-19T06:30:00.000Z"
-                ]
+                // type: 'datetime',
+                categories:[@foreach ($date_label as $x )"{!! $x!!}",@endforeach],
             },
             tooltip: {
                 x: {
-                    format: 'dd/MM/yy HH:mm'
+                    format: 'dd/MM/yy'
                 },
             },
         };
@@ -763,6 +977,45 @@
 
         var chart_sales = new ApexCharts(document.querySelector("#chart_by_sales"), chart_by_sales);
         chart_sales.render();
+
+        var brand_sales = {
+            series: [{
+                name: 'Actual',
+                data: [
+                    @foreach ($data_brand as $x)
+
+
+                        {
+                            x: {!! \DB::table('principal')->where('id', $x->brand)->get()->pluck('name'); !!},
+                            y: {{ $x->value }},
+                            // goals: [{
+                            //     name: 'Expected ',
+                            //     value: 5000000000,
+                            //     strokeHeight: 5,
+                            //     strokeColor: '#775DD0'
+                            // }]
+                        },
+                    @endforeach
+
+                ]
+            }],
+            chart: {
+                height: 350,
+                type: 'bar'
+            },
+            plotOptions: {
+                bar: {
+                    columnWidth: '60%'
+                }
+            },
+            colors: ['#00E396'],
+            dataLabels: {
+                enabled: false
+            },
+        };
+
+        var chart_brand = new ApexCharts(document.querySelector("#chart_by_brand"), brand_sales);
+        chart_brand.render();
 
 
 

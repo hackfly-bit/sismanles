@@ -49,6 +49,7 @@
                                     <th>Jenis Perusahaan</th>
                                     <th>Segmentasi</th>
                                     <th>Alamat</th>
+                                    <th>Call</th>
                                     <th>Revision</th>
                                     <th>Action</th>
                                 </tr>
@@ -64,6 +65,10 @@
                                             <td>{{ $x->jenis_perusahaan }}</td>
                                             <td>{{ $x->segmentasi }}</td>
                                             <td>{{ $x->alamat }}</td>
+                                            <td><a href="{{ route('customer.call', $x->id) }}"
+                                                class="btn btn-primary btn-icon">
+                                                <i data-feather="check-square"></i>
+                                            </a></td>
                                             <td><a href="{{ route('customer.history', $x->id) }}"
                                                     class="btn btn-primary btn-icon">
                                                     <i data-feather="check-square"></i>
@@ -103,6 +108,12 @@
                                     <th>Jenis Perusahaan</th>
                                     <th>Segmentasi</th>
                                     <th>Alamat</th>
+                                    <th>Call</th>
+                                    <th>Visit</th>
+                                    {{-- <th>Quotation</th> --}}
+                                    <th>SPH</th>
+                                    <th>PO</th>
+                                    <th>Presentasi</th>
                                     <th>Revision</th>
                                     <th>Action</th>
                                 </tr>
@@ -118,18 +129,46 @@
                                             <td>{{ $x->jenis_perusahaan }}</td>
                                             <td>{{ $x->segmentasi }}</td>
                                             <td>{{ $x->alamat }}</td>
+                                            <td><a href="{{ route('customer.call', $x->id) }}"
+                                                class="btn btn-primary btn-icon">
+                                                <i data-feather="plus"></i>
+                                            </a></td>
+                                            <td><a href="{{ route('customer.visit', $x->id) }}"
+                                                class="btn btn-primary btn-icon">
+                                                <i data-feather="plus"></i>
+                                            </a></td>
+                                            {{-- <td><a href="{{ route('customer.quotation', $x->id) }}"
+                                                class="btn btn-primary btn-icon">
+                                                <i data-feather="check-square"></i>
+                                            </a></td> --}}
+                                            <td><a href="{{ route('customer.sph', $x->id) }}"
+                                                class="btn btn-primary btn-icon">
+                                                <i data-feather="plus"></i>
+                                            </a></td>
+                                            <td><a href="{{ route('customer.preorder', $x->id) }}"
+                                                class="btn btn-primary btn-icon">
+                                                <i data-feather="plus"></i>
+                                            </a></td>
+                                            <td><a href="{{ route('customer.presentasi', $x->id) }}"
+                                                class="btn btn-primary btn-icon">
+                                                <i data-feather="plus"></i>
+                                            </a></td>
                                             <td><a href="{{ route('customer.history', $x->id) }}"
                                                     class="btn btn-primary btn-icon">
-                                                    <i data-feather="check-square"></i>
+                                                    <i data-feather="clipboard"></i>
                                                 </a></td>
-                                            <td><a href="{{ route('customer.edit', $x->id) }}"
-                                                    class="btn btn-primary btn-icon">
-                                                    <i data-feather="check-square"></i>
+                                            <td><a href="{{ route('report.reportCustomer', $x->id) }}"
+                                                class="btn btn-warning btn-icon">
+                                                <i data-feather="eye"></i>
+                                            </a>
+                                                <a href="{{ route('customer.edit', $x->id) }}"
+                                                    class="btn btn-success btn-icon">
+                                                    <i data-feather="edit"></i>
                                                 </a>
                                                 <a href="{{ route('customer.destroy', $x->id) }}"
                                                     onclick="event.preventDefault(); document.getElementById('customer-delete-{{ $x->id }}').submit();"
                                                     class="btn btn-danger btn-icon">
-                                                    <i data-feather="box"></i>
+                                                    <i data-feather="delete"></i>
                                                 </a>
                                                 <form id="customer-delete-{{ $x->id }}"
                                                     action="{{ route('customer.destroy', $x->id) }}" method="POST"

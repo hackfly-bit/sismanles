@@ -27,8 +27,7 @@
                   </div>
                   <div class="col-md-6">
                       <div class="d-flex justify-content-end">
-                          <a href="{{ route('sph.create') }}" class="btn btn-outline-primary">Tambah Data
-                              SPH</a>
+                          <a href="{{ route('sph.create') }}" class="btn btn-outline-primary">Tambah Data SPH</a>
                       </div>
                   </div>
               </div>
@@ -54,8 +53,6 @@
             </thead>
             <tbody>
               @foreach ($sph_sales as $x )
-                
-            
               <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $x->customer->nama_instansi }}</td>
@@ -76,7 +73,8 @@
                   <i data-feather="check-square"></i>
               </a>
               <a href="{{ route('sph.destroy', $x->id) }}"
-                  onclick="event.preventDefault(); document.getElementById('sph-delete-{{ $x->id }}').submit();"
+                  
+                
                   class="btn btn-danger btn-icon">
                   <i data-feather="box"></i>
               </a>
