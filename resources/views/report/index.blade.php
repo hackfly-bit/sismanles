@@ -74,7 +74,7 @@
                                 <th>Tanggal Presentasi</th>
                                 <th>Note</th>
                                 <th>Sales</th>
-                                <th>Progress</th>
+                                <th>KPI</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -170,7 +170,7 @@
                                         <th>Tanggal Presentasi</th>
                                         <th>Note</th>
                                         <th>Sales</th>
-                                        <th>Progress</th>
+                                        <th>KPI</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -218,8 +218,6 @@
                                         <td><div class="progress">
                                             <div class="progress-bar" role="progressbar" style="width: {{($progress[$x->id] / 5)*100}}%;" aria-valuenow="{{($progress[$x->id] / 5)*100}}" aria-valuemin="0" aria-valuemax="100">{{($progress[$x->id] / 5)*100}}%</div>
                                           </div></td>
-                                        
-                                       
                                         
                                     </tr>
                                         @endforeach

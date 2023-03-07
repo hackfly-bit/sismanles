@@ -52,6 +52,12 @@ class MainController extends Controller
         $count_customer_by_sales = DB::table('users')->join("customers", "users.id", "=", "customers.user_id")->selectRaw('username, count(customers.id) as total,customers.created_at as date')->groupBy(DB::raw("customers.created_at"))->get();
         //return $count_customer_by_sales;
 
+        $data_brand = DB::table('sphs')->select('brand', DB::raw("count(brand) as value"))
+        ->groupBy('brand')
+        ->orderBy('sphs.brand','asc')
+        ->get();
+
+
         $chart_by_sales = DB::table("users")
             ->join("sphs", "users.id", "=", "sphs.user_id")
             ->selectRaw("username, sum(sphs.nilai_pagu) as total")
@@ -78,7 +84,7 @@ class MainController extends Controller
 
         $count_sales = Customer::where('user_id', 1)->get();
 
-        return view('dashboard', compact('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'count_sales', 'customer', 'customer_chart', 'kegiatan_visit_chart', 'kegiatan_other_chart', 'sph_chart', 'chart_by_sales', 'count_customer_by_sales','date_label'));
+        return view('dashboard', compact('data_brand','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'count_sales', 'customer', 'customer_chart', 'kegiatan_visit_chart', 'kegiatan_other_chart', 'sph_chart', 'chart_by_sales', 'count_customer_by_sales','date_label'));
     }
 
 

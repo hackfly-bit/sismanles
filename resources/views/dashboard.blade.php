@@ -214,51 +214,53 @@
     </div> <!-- row -->
 
     <div class="row">
-        <div class="col-12 col-xl-12 grid-margin stretch-card">
+        <div class="col-6 col-xl-6 grid-margin stretch-card">
             <div class="card overflow-hidden">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
-                        <h6 class="card-title mb-0">Revenue</h6>
+                        <h6 class="card-title mb-0">Total Penjualan Brand</h6>
                         <div class="dropdown">
                             <button class="btn btn-link p-0" type="button" id="dropdownMenuButton3"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="edit-2" class="icon-sm me-2"></i> <span
-                                        class="">Edit</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="trash" class="icon-sm me-2"></i> <span
-                                        class="">Delete</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="printer" class="icon-sm me-2"></i> <span
-                                        class="">Print</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        data-feather="download" class="icon-sm me-2"></i> <span
-                                        class="">Download</span></a>
-                            </div>
+                           
                         </div>
                     </div>
                     <div class="row align-items-start mb-2">
                         <div class="col-md-7">
-                            <p class="text-muted tx-13 mb-3 mb-md-0">Revenue is the income that a business has from its
-                                normal business activities, usually from the sale of goods and services to customers.</p>
                         </div>
                         <div class="col-md-5 d-flex justify-content-md-end">
-                            <div class="btn-group mb-3 mb-md-0" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-outline-primary">Today</button>
-                                <button type="button" class="btn btn-outline-primary d-none d-md-block">Week</button>
-                                <button type="button" class="btn btn-primary">Month</button>
-                                <button type="button" class="btn btn-outline-primary">Year</button>
-                            </div>
                         </div>
                     </div>
 
                     {{-- edit Main Chart --}}
-                    <div id="count_by_sales"></div>
+                    <div id="chart_by_brand"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-xl-6 grid-margin stretch-card">
+            <div class="card overflow-hidden">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
+                        <h6 class="card-title mb-0">Total Penjualan Produk</h6>
+                        <div class="dropdown">
+                            <button class="btn btn-link p-0" type="button" id="dropdownMenuButton3"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+                            </button>
+                           
+                        </div>
+                    </div>
+                    <div class="row align-items-start mb-2">
+                        <div class="col-md-7">
+                        </div>
+                        <div class="col-md-5 d-flex justify-content-md-end">
+                        </div>
+                    </div>
+
+                    {{-- edit Main Chart --}}
+                    <div id="chart_by_brand"></div>
                 </div>
             </div>
         </div>
@@ -510,10 +512,6 @@
                             </a>
                         </div>
                     </div>
-
-                    
-
-                    <div id="count_by_sales"></div>
                 </div>
             </div>
         </div>
@@ -979,6 +977,45 @@
 
         var chart_sales = new ApexCharts(document.querySelector("#chart_by_sales"), chart_by_sales);
         chart_sales.render();
+
+        var brand_sales = {
+            series: [{
+                name: 'Actual',
+                data: [
+                    @foreach ($data_brand as $x)
+
+
+                        {
+                            x: {!! \DB::table('principal')->where('id', $x->brand)->get()->pluck('name'); !!},
+                            y: {{ $x->value }},
+                            // goals: [{
+                            //     name: 'Expected ',
+                            //     value: 5000000000,
+                            //     strokeHeight: 5,
+                            //     strokeColor: '#775DD0'
+                            // }]
+                        },
+                    @endforeach
+
+                ]
+            }],
+            chart: {
+                height: 350,
+                type: 'bar'
+            },
+            plotOptions: {
+                bar: {
+                    columnWidth: '60%'
+                }
+            },
+            colors: ['#00E396'],
+            dataLabels: {
+                enabled: false
+            },
+        };
+
+        var chart_brand = new ApexCharts(document.querySelector("#chart_by_brand"), brand_sales);
+        chart_brand.render();
 
 
 

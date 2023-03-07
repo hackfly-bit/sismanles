@@ -71,6 +71,7 @@ class SphController extends Controller
             'pdf_file' => 'required|mimes:pdf|max:10000'
         ]);
         //upload pdf
+
         $pdfName = time() . '.' . $request->pdf_file->extension();
         $uploadedPdf = $request->pdf_file->move(public_path('assets/pdf'), $pdfName);
         $pdfPath = $pdfName;
@@ -80,7 +81,7 @@ class SphController extends Controller
         $sph->customer_id = $request->customer;
         $sph->kegiatan = "SPH";
         $sph->brand = $request->brand;
-        $sph->produk = json_encode($request->products);
+        $sph->produk = serialize($request->products);
         $sph->sumber_anggaran = $request->sumber_anggaran;
         $sph->nilai_pagu = intval(str_replace(["Rp.", ".00", ","], "", $request->nilai_pagu));
         $sph->metode_pembelian = $request->metode_pembelian;
@@ -88,6 +89,8 @@ class SphController extends Controller
         $sph->time_line = $request->time_line;
         $sph->winrate = $request->winrate;
         $sph->pdf_file = $pdfPath;
+
+        return $sph;
 
         $sph->save();
 

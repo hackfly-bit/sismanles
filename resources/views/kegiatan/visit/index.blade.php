@@ -69,7 +69,7 @@
                             <label for="products" class="col-sm-3 col-form-label">Produk</label>
                             <div class="col-sm-9">
                                 {{-- <div id="products"></div> --}}
-                                <select class="form-select js-example-basic-multiple" multiple="multiple" id="products" name="products">
+                                <select class="form-select js-example-basic-multipl" multiple="multiple" id="products" name="products">
                                     <option value="">Pilih Produk</option>
                                 {{-- @foreach ($brand as $x)
                                     <option value="{{ $x->id }}">{{ $x->name }}</option>
