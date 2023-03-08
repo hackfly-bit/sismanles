@@ -38,9 +38,9 @@ Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
 
 Route::group(['middleware' => ['auth']], function () {
-  Route::get('/', 'MainController@index')->name('dashboard');
+  Route::get('/', 'MainController@index')->name('dashboard')->middleware('role:admin|manager');
   Route::get('/setting-select', 'MainController@setting_select')->name('setting.select');
-  Route::get('/user', 'MainController@user')->name('setting.user');
+  Route::get('/user', 'MainController@user')->name('setting.user')->middleware('role:admin|manager');
   Route::get('/user/edit/{id}', 'UserController@editUser')->name('setting.user.edit');
   Route::put('/user/update/{id}', 'UserController@updateUser')->name('setting.user.update');
   Route::delete('/user/delete/{id}', 'UserController@deleteUser')->name('setting.user.delete');

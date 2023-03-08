@@ -113,6 +113,9 @@ class UserController extends Controller
 
         if (Auth::attempt(['email' => $request->userEmail, 'password' => $request->userPassword])) {
             $request->session()->regenerate();
+            if(Auth::user()->role == 'sales'){
+                return redirect()->route('user.profile',Auth::user()->id)->with('success', 'Login Berhasil !!');
+            }
             return redirect()->intended('/');
         }
 

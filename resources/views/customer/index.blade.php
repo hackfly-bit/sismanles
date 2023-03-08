@@ -50,46 +50,70 @@
                                     <th>Segmentasi</th>
                                     <th>Alamat</th>
                                     <th>Call</th>
+                                    <th>Visit</th>
+                                    <th>Presentasi</th>
+                                    <th>SPH</th>
+                                    <th>PO</th>
                                     <th>Revision</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                                 <tbody >
                                     @foreach ($customer_sales as $x)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $x->nama_instansi }}</td>
-                                            <td>{{ $x->nama_customer }}</td>
-                                            <td>{{ $x->jabatan }}</td>
-                                            <td>{{ $x->nomer_hp }}</td>
-                                            <td>{{ $x->jenis_perusahaan }}</td>
-                                            <td>{{ $x->segmentasi }}</td>
-                                            <td>{{ $x->alamat }}</td>
-                                            <td><a href="{{ route('customer.call', $x->id) }}"
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $x->nama_instansi }}</td>
+                                        <td>{{ $x->nama_customer }}</td>
+                                        <td>{{ $x->jabatan }}</td>
+                                        <td>{{ $x->nomer_hp }}</td>
+                                        <td>{{ $x->jenis_perusahaan }}</td>
+                                        <td>{{ $x->segmentasi }}</td>
+                                        <td>{{ $x->alamat }}</td>
+                                        <td><a href="{{ route('customer.call', $x->id) }}"
+                                            class="btn btn-primary btn-icon">
+                                            <i data-feather="plus"></i>
+                                        </a></td>
+                                        <td><a href="{{ route('customer.visit', $x->id) }}"
+                                            class="btn btn-primary btn-icon">
+                                            <i data-feather="plus"></i>
+                                        </a></td>
+                                        <td><a href="{{ route('customer.presentasi', $x->id) }}"
+                                            class="btn btn-primary btn-icon">
+                                            <i data-feather="plus"></i>
+                                        </a></td>
+                                        <td><a href="{{ route('customer.sph', $x->id) }}"
+                                            class="btn btn-primary btn-icon">
+                                            <i data-feather="plus"></i>
+                                        </a></td>
+                                        <td><a href="{{ route('customer.preorder', $x->id) }}"
+                                            class="btn btn-primary btn-icon">
+                                            <i data-feather="plus"></i>
+                                        </a></td>
+                                        <td><a href="{{ route('customer.history', $x->id) }}"
                                                 class="btn btn-primary btn-icon">
-                                                <i data-feather="check-square"></i>
+                                                <i data-feather="clipboard"></i>
                                             </a></td>
-                                            <td><a href="{{ route('customer.history', $x->id) }}"
-                                                    class="btn btn-primary btn-icon">
-                                                    <i data-feather="check-square"></i>
-                                                </a></td>
-                                            <td><a href="{{ route('customer.edit', $x->id) }}"
-                                                    class="btn btn-primary btn-icon">
-                                                    <i data-feather="check-square"></i>
-                                                </a>
-                                                <a href="{{ route('customer.destroy', $x->id) }}"
-                                                    onclick="event.preventDefault(); document.getElementById('customer-delete-{{ $x->id }}').submit();"
-                                                    class="btn btn-danger btn-icon">
-                                                    <i data-feather="box"></i>
-                                                </a>
-                                                <form id="customer-delete-{{ $x->id }}"
-                                                    action="{{ route('customer.destroy', $x->id) }}" method="POST"
-                                                    class="d-none">
-                                                    @method('delete')
-                                                    @csrf
-                                                </form>
-                                            </td>
-                                        </tr>
+                                        <td><a href="{{ route('report.reportCustomer', $x->id) }}"
+                                            class="btn btn-warning btn-icon">
+                                            <i data-feather="eye"></i>
+                                        </a>
+                                            <a href="{{ route('customer.edit', $x->id) }}"
+                                                class="btn btn-success btn-icon">
+                                                <i data-feather="edit"></i>
+                                            </a>
+                                            <a href="{{ route('customer.destroy', $x->id) }}"
+                                                onclick="event.preventDefault(); document.getElementById('customer-delete-{{ $x->id }}').submit();"
+                                                class="btn btn-danger btn-icon">
+                                                <i data-feather="delete"></i>
+                                            </a>
+                                            <form id="customer-delete-{{ $x->id }}"
+                                                action="{{ route('customer.destroy', $x->id) }}" method="POST"
+                                                class="d-none">
+                                                @method('delete')
+                                                @csrf
+                                            </form>
+                                        </td>
+                                    </tr>
                                     @endforeach
                                 </tbody>
                           
@@ -110,10 +134,9 @@
                                     <th>Alamat</th>
                                     <th>Call</th>
                                     <th>Visit</th>
-                                    {{-- <th>Quotation</th> --}}
+                                    <th>Presentasi</th>
                                     <th>SPH</th>
                                     <th>PO</th>
-                                    <th>Presentasi</th>
                                     <th>Revision</th>
                                     <th>Action</th>
                                 </tr>
@@ -137,19 +160,15 @@
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="plus"></i>
                                             </a></td>
-                                            {{-- <td><a href="{{ route('customer.quotation', $x->id) }}"
+                                            <td><a href="{{ route('customer.presentasi', $x->id) }}"
                                                 class="btn btn-primary btn-icon">
-                                                <i data-feather="check-square"></i>
-                                            </a></td> --}}
+                                                <i data-feather="plus"></i>
+                                            </a></td>
                                             <td><a href="{{ route('customer.sph', $x->id) }}"
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="plus"></i>
                                             </a></td>
                                             <td><a href="{{ route('customer.preorder', $x->id) }}"
-                                                class="btn btn-primary btn-icon">
-                                                <i data-feather="plus"></i>
-                                            </a></td>
-                                            <td><a href="{{ route('customer.presentasi', $x->id) }}"
                                                 class="btn btn-primary btn-icon">
                                                 <i data-feather="plus"></i>
                                             </a></td>
