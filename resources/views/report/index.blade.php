@@ -165,7 +165,7 @@
                                         <th>NPWP</th>
                                         <th>Due Date</th>
                                         <th>Alamat</th>
-                                        <th>Presntasi</th>
+                                        <th>Presentasi</th>
                                         <th>Pertemuan</th>
                                         <th>Tanggal Presentasi</th>
                                         <th>Note</th>

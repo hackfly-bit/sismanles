@@ -10,12 +10,14 @@
   <div class="sidebar-body">
     <ul class="nav">
       <li class="nav-item nav-category">Main</li>
+      @hasrole('admin')
       <li class="nav-item {{ active_class(['/']) }}">
         <a href="{{ url('/') }}" class="nav-link">
           <i class="link-icon" data-feather="box"></i>
           <span class="link-title">Dashboard</span>
         </a>
       </li>
+      @endhasrole
       <li class="nav-item {{ active_class(['sales/*']) }}">
         <a class="nav-link" data-bs-toggle="collapse" href="#sales" role="button" aria-expanded="{{ is_active_route(['sales/*']) }}" aria-controls="sales">
           <i class="link-icon" data-feather="mail"></i>
@@ -49,9 +51,11 @@
        
         <div class="collapse {{ show_class(['email/*']) }}" id="email">
           <ul class="nav sub-menu">
+            @hasrole('admin')
             <li class="nav-item">
               <a href="{{ route('setting.user') }}" class="nav-link {{ active_class(['email/inbox']) }}">User</a>
             </li>
+            @endhasrole
             <li class="nav-item">
               <a href="{{ route('user.profile', Auth::user()->id) }}" class="nav-link {{ active_class(['email/read']) }}">User Profile</a>
             </li>

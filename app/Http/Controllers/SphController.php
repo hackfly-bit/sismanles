@@ -81,7 +81,7 @@ class SphController extends Controller
         $sph->customer_id = $request->customer;
         $sph->kegiatan = "SPH";
         $sph->brand = $request->brand;
-        $sph->produk = serialize($request->products);
+        $sph->produk = implode(',',$request->products);
         $sph->sumber_anggaran = $request->sumber_anggaran;
         $sph->nilai_pagu = intval(str_replace(["Rp.", ".00", ","], "", $request->nilai_pagu));
         $sph->metode_pembelian = $request->metode_pembelian;
@@ -89,8 +89,6 @@ class SphController extends Controller
         $sph->time_line = $request->time_line;
         $sph->winrate = $request->winrate;
         $sph->pdf_file = $pdfPath;
-
-        return $sph;
 
         $sph->save();
 
