@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
             $table->string('kegiatan')->nullable();
             $table->string('brand')->nullable();
-            $table->string('produk')->nullable();
+            $table->json('produk')->nullable();
             $table->string('sumber_anggaran')->nullable();
             $table->decimal('nilai_pagu',10,0)->nullable();
             $table->string('metode_pembelian')->nullable();

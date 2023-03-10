@@ -60,19 +60,9 @@ class UserController extends Controller
 
     public function updateUser(Request $request, $id)
     {
-        $request->validate([
-            'role' => 'required',
-            'username' => 'required',
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'email' => 'required|unique:users,email',
-            'password' => 'required',
-            'password_confirm' => 'required|same:password',
-            'city' => 'required',
-            'address' => 'required',
-            'country' => 'required',
-            'about' => 'required'
-        ]);
+        // $request->validate([
+            
+        // ]);
 
         $user = User::find($id);
         $user->username = $request->username;
@@ -126,6 +116,14 @@ class UserController extends Controller
 
     public function profile($id)
     {
+
+        // Grafik By Sales
+        // Progress By Sales
+        $progress_by_sales = Customer::where('user_id',$id)->get();
+
+
+
+
         $user =  User::find($id);
         $customer_by_sales = Customer::where('user_id', $id)->get()->sortBy('asc')->take(5);
         //return $user;

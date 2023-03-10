@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('kegiatan')->nullable();
             $table->date('tanggal')->nullable();
             $table->string('brand')->nullable();
-            $table->string('produk')->nullable();
+            $table->json('produk')->nullable();
             $table->string('pertemuan')->nullable();
             $table->text('note')->nullable();
             $table->timestamps();

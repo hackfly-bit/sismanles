@@ -73,7 +73,7 @@ class KegiatanVisitController extends Controller
         $visit->customer_id = $request->customer;
         $visit->kegiatan = "Visit";
         $visit->tanggal = $request->tanggal;
-        $visit->produk = implode(',',$request->products);
+        $visit->produk = json_encode(["produk" => $request->products]);
         $visit->brand = $request->brand;
         $visit->pertemuan = $request->pertemuan;
         $visit->note = $request->note;

@@ -208,7 +208,7 @@
                                         <td>{{ $x->customer->nomer_hp }}</td>
                                         <td>{{ $x->kegiatan }}</td>
                                         <td>{{ $x->brand($x->brand) }}</td>
-                                        <td>{{ $x->produk}}</td>
+                                        <td> {!! json_encode($x->produk) !!}</td>
                                         <td>{{ $x->sumber_anggaran }}</td>
                                         <td>Rp. {{ number_format($x->nilai_pagu) }}</td>
                                         <td>{{ $x->metode_pembelian }}</td>

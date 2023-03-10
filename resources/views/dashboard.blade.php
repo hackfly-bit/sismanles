@@ -113,6 +113,36 @@
                     </div>
                 </div>
 
+                <div class="col-md-4 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-baseline">
+                                <h6 class="card-title mb-0">Total Presentasi</h6>
+                                <div class="dropdown mb-2">
+                                    <button class="btn btn-link p-0" type="button" id="dropdownMenuButton2"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-md-12 col-xl-5">
+                                    <h3 class="mb-2">{{ $h }}</h3>
+                                    <div class="d-flex align-items-baseline">
+                                        <p class="text-success">
+                                            <span>Orang</span>
+                                            <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-12 col-xl-7">
+                                    <div id="other_chart" class="mt-md-3 mt-xl-0"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {{-- Total SPH --}}
 
                 <div class="col-md-4 grid-margin stretch-card">
@@ -193,7 +223,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6 col-md-12 col-xl-5">
-                                    <h3 class="mb-2">{{ $h }}</h3>
+                                    <h3 class="mb-2">{{ $c }}</h3>
                                     <div class="d-flex align-items-baseline">
                                         <p class="text-success">
                                             <span>Orang</span>
@@ -260,7 +290,7 @@
                     </div>
 
                     {{-- edit Main Chart --}}
-                    <div id="chart_by_brand"></div>
+                    <div id="chart_by_produk"></div>
                 </div>
             </div>
         </div>
@@ -520,7 +550,7 @@
     </div> <!-- row -->
 
     <div class="row">
-        <div class="col-lg-7 col-xl-8 grid-margin stretch-card">
+        <div class="col-lg-12 col-xl-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline mb-2">
@@ -536,42 +566,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-5 col-xl-4 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-baseline mb-2">
-                        <h6 class="card-title mb-0">Cloud storage</h6>
-                        <div class="dropdown mb-2">
-                            <button class="btn btn-link p-0" type="button" id="dropdownMenuButton5"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div id="storageChart"></div>
-                    <div class="row mb-3">
-                        <div class="col-6 d-flex justify-content-end">
-                            <div>
-                                <label
-                                    class="d-flex align-items-center justify-content-end tx-10 text-uppercase fw-bolder">Total
-                                    storage <span class="p-1 ms-1 rounded-circle bg-secondary"></span></label>
-                                <h5 class="fw-bolder mb-0 text-end">8TB</h5>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div>
-                                <label class="d-flex align-items-center tx-10 text-uppercase fw-bolder"><span
-                                        class="p-1 me-1 rounded-circle bg-primary"></span> Used storage</label>
-                                <h5 class="fw-bolder mb-0">~5TB</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-grid">
-                        <button class="btn btn-primary">Upgrade storage</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div> <!-- row -->
 
     <div class="row">
@@ -714,100 +709,8 @@
         }
         var fontFamily = "'Roboto', Helvetica, sans-serif"
 
-        var customer = {
-            chart: {
-                type: "bar",
-                height: 60,
-                sparkline: {
-                    enabled: !0
-                }
-            },
-            plotOptions: {
-                bar: {
-                    borderRadius: 2,
-                    columnWidth: "60%"
-                }
-            },
-            colors: ['#6571ff'],
-            series: [{
-                name: '',
-                data: {{ $customer_chart->values() }}
-            }],
-            xaxis: {
-                categories: {!! $customer_chart->keys() !!}
-            },
-        };
-        var visit = {
-            chart: {
-                type: "bar",
-                height: 60,
-                sparkline: {
-                    enabled: !0
-                }
-            },
-            plotOptions: {
-                bar: {
-                    borderRadius: 2,
-                    columnWidth: "60%"
-                }
-            },
-            colors: ['#6571ff'],
-            series: [{
-                name: '',
-                data: {{ $kegiatan_visit_chart->values() }}
-            }],
-            xaxis: {
-                categories: {!! $kegiatan_visit_chart->keys() !!}
-            },
-        };
 
-        let other = {
-            chart: {
-                type: "bar",
-                height: 60,
-                sparkline: {
-                    enabled: !0
-                }
-            },
-            plotOptions: {
-                bar: {
-                    borderRadius: 2,
-                    columnWidth: "60%"
-                }
-            },
-            colors: ['#6571ff'],
-            series: [{
-                name: '',
-                data: {{ $kegiatan_other_chart->values() }}
-            }],
-            xaxis: {
-                categories: {!! $kegiatan_other_chart->keys() !!}
-            },
-        }
 
-        let sph = {
-            chart: {
-                type: "bar",
-                height: 60,
-                sparkline: {
-                    enabled: !0
-                }
-            },
-            plotOptions: {
-                bar: {
-                    borderRadius: 2,
-                    columnWidth: "60%"
-                }
-            },
-            colors: ['#6571ff'],
-            series: [{
-                name: '',
-                data: {{ $sph_chart->values() }}
-            }],
-            xaxis: {
-                categories: {!! $sph_chart->keys() !!}
-            },
-        }
 
 
         var chart_by_sales = {
@@ -980,7 +883,7 @@
 
         var brand_sales = {
             series: [{
-                name: 'Actual',
+                name: 'Sekarang',
                 data: [
                     @foreach ($data_brand as $x)
 
@@ -1014,6 +917,39 @@
             },
         };
 
+        var produk_sales = {
+            series: [{
+                name: 'Sekarang',
+                data: [
+                    @foreach ($produk_chart as $key => $value)
+
+                        {
+                            x: "{{ $key  }}",
+                            y: {{ $value }},
+                        
+                        },
+                    @endforeach
+
+                ]
+            }],
+            chart: {
+                height: 350,
+                type: 'bar'
+            },
+            plotOptions: {
+                bar: {
+                    columnWidth: '60%'
+                }
+            },
+            colors: ['#00E396'],
+            dataLabels: {
+                enabled: false
+            },
+        };
+
+        var produk_brand = new ApexCharts(document.querySelector("#chart_by_produk"), produk_sales);
+        produk_brand.render();
+
         var chart_brand = new ApexCharts(document.querySelector("#chart_by_brand"), brand_sales);
         chart_brand.render();
 
@@ -1021,9 +957,12 @@
 
 
 
-        new ApexCharts(document.querySelector("#customer_chart"), customer).render();
-        new ApexCharts(document.querySelector("#sph_chart"), sph).render();
-        new ApexCharts(document.querySelector("#visit_chart"), visit).render();
+        // new ApexCharts(document.querySelector("#customer_chart"), customer).render();
+        // new ApexCharts(document.querySelector("#call_chart"), call).render();
+        // new ApexCharts(document.querySelector("#visit_chart"), visit).render();
+        // new ApexCharts(document.querySelector("#sph_chart"), sph).render();
+        // new ApexCharts(document.querySelector("#presentasi_chart"), presentasi).render();
+        // new ApexCharts(document.querySelector("#po_chart"), po).render();
         new ApexCharts(document.querySelector("#other_chart"), other).render();
         //var chart = new ApexCharts(document.querySelector("#chart"), chart_by_sales).render();
 

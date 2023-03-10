@@ -9,6 +9,7 @@ use App\Models\Preorder;
 use App\Models\Kegiatan_visit;
 use Illuminate\View\View;
 use App\Models\Presentasi;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Concerns\FromView;
 
 class TabulasiExport implements FromView
@@ -29,8 +30,11 @@ class TabulasiExport implements FromView
             
         }
 
+        $by_user = Auth::user()->id;
+
         return view('pdf.excel', [
             'customer' => customer::all(),
+            'customer_by_sales' => customer::where('user_id', $by_user)->get(),
             'progress'=> $progress
         ]);
     }
